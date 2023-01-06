@@ -9,7 +9,7 @@ class ProfileController extends Controller
 {
     public function profile()
     {
-        return view('profile', [
+        return view('user.profile', [
             'user' => User::findOrFail(auth()->user()->id)
         ]);
     }

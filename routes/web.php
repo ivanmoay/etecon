@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\UserController;
 use App\Http\Controllers\Auth\LoginController;
@@ -36,3 +38,17 @@ Route::get('/users/{user}/demote', [UserController::class, 'demote']);
 
 Route::get('/my_profile',[ProfileController::class, 'profile']);
 Route::put('/profile/{user}',[ProfileController::class, 'update']);
+
+Route::get('/doctors',[DoctorController::class, 'index']);
+Route::get('/doctors/create', [DoctorController::class, 'create']);
+Route::post('/doctors', [DoctorController::class, 'store']);
+Route::get('/doctors/{doctor}/edit', [DoctorController::class, 'edit']);
+Route::put('/doctors/{doctor}', [DoctorController::class, 'update']);
+Route::delete('/doctors/{doctor}', [DoctorController::class, 'destroy']);
+
+Route::get('/companies',[CompanyController::class, 'index']);
+Route::get('/companies/create', [CompanyController::class, 'create']);
+Route::post('/companies', [CompanyController::class, 'store']);
+Route::get('/companies/{company}/edit', [CompanyController::class, 'edit']);
+Route::put('/companies/{company}', [CompanyController::class, 'update']);
+Route::delete('/companies/{company}', [CompanyController::class, 'destroy']);
