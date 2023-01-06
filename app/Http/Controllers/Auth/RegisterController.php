@@ -32,7 +32,8 @@ class RegisterController extends Controller
             'phone_number' => $request->phone_number,
             'credentials' => $request->credentials,
             'user_type' => 1,
-            'activated' => 0
+            'activated' => 0,
+            'company_id' => 0,
         ]);
         //sign in
         auth()->attempt(

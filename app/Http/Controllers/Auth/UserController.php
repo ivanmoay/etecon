@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 class UserController extends Controller
 {
     public function users()
-    {
+    {        
         return view('auth.users', [
             'users' => User::all()
         ]);

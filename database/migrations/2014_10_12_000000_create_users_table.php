@@ -23,6 +23,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->tinyInteger('user_type')->default('1');
             $table->boolean('activated')->default(0);
+            $table->integer('company_id')->unsigned()->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

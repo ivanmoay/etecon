@@ -50,6 +50,14 @@
                       @enderror    
                     </div>
 
+                    <label class="form-label">Company</label>
+                    <select class="form-select" name="company_id">
+                      <option selected value="0">&nbsp; Select...</option>
+                      @foreach ($companies as $company)
+                          <option value="{{$company->id}}" {{$user->company_id == $company->id ? 'selected' : ''}}>&nbsp; {{$company->company_name}}</option>
+                      @endforeach                      
+                    </select><br />
+
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Update</button>
                             <button type="reset" class="btn btn-secondary">Reset</button>

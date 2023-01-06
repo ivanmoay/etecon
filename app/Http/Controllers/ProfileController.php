@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Company;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -10,7 +11,8 @@ class ProfileController extends Controller
     public function profile()
     {
         return view('user.profile', [
-            'user' => User::findOrFail(auth()->user()->id)
+            'user' => User::findOrFail(auth()->user()->id),
+            'companies' => Company::orderBy('company_name')->get()
         ]);
     }
 
@@ -27,6 +29,7 @@ class ProfileController extends Controller
             'name' => $request->name,
             'phone_number' => $request->phone_number,
             'credentials' => $request->credentials,
+            'company_id' => $request->company_id
         ]);       
 
         return redirect('/my_profile');

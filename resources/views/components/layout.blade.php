@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
   <title>
     Etecon-App
   </title>
@@ -26,8 +26,8 @@
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
-      <a class="navbar-brand m-0" href="#" target="_blank">
-        <img src="/assets/img/logo-ct.png" class="navbar-brand-img h-100" alt="main_logo">
+      <a class="navbar-brand m-0" href="#">
+        <img src="/assets/img/etecon-logo.png" class="navbar-brand-img h-100" alt="main_logo">
         <span class="ms-1 font-weight-bold text-white">Etecon-App</span>
       </a>
     </div>
@@ -49,14 +49,17 @@
         @auth
             @if (auth()->user()->activated)
                 <x-nav-item link='/my_profile' icon='table_view' navText='My Profile' />
-                <x-nav-item link='#' icon='receipt_long' navText='Forms' />
+                <x-nav-item link='/my_forms' icon='receipt_long' navText='My Forms' />
             @else
                 <x-nav-item link='#' icon='person' navText='Awaiting Activation' />
             @endif
-            @if (auth()->user()->user_type >= 2)
+            @if (auth()->user()->user_type == 2 || auth()->user()->user_type == 3)                
                 <x-nav-item link='/users' icon='person' navText='Users' />
                 <x-nav-item link='/companies' icon='person' navText='Companies' />
                 <x-nav-item link='/doctors' icon='person' navText='Doctors' />
+            @endif
+            @if (auth()->user()->user_type == 3)
+                <x-nav-item link='/forms' icon='receipt_long' navText='Forms' />
             @endif
             <x-nav-item link='/logout' icon='logout' navText='Logout' />
         @endauth  
@@ -79,9 +82,10 @@
                 <div class="copyright text-center text-sm text-muted text-lg-start">
                     © <script>
                     document.write(new Date().getFullYear())
-                    </script>,
+                    </script>
+                    {{-- ,
                     by
-                    <a href="#" class="font-weight-bold" target="_blank">#</a>
+                    <a href="#" class="font-weight-bold" target="_blank">#</a> --}}
                 </div>
                 </div>
                 <div class="col-lg-6">

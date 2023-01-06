@@ -15,6 +15,7 @@
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">User</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Contact #</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Credentials</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Company</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">User Type</th>
                       <th colspan="2" class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Action</th>
                     </tr>
@@ -35,6 +36,14 @@
                             </td>
                             <td>
                                 <p class="text-xs font-weight-bold mb-0">{{$user->credentials}}</p>
+                            </td>
+                            <td>
+                                @if (is_null(@$user->company->company_name))
+                                    <p class="text-xs font-weight-bold mb-0">None</p> 
+                                @else
+                                    <p class="text-xs font-weight-bold mb-0">{{$user->company->company_name}}</p>
+                                @endif
+                                
                             </td>
                             <td>
                                 <div class="d-flex px-2 py-1">
