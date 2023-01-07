@@ -1,10 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PDFController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserFormController;
 use App\Http\Controllers\Auth\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -45,6 +47,10 @@ Route::get('/logout', [LoginController::class, 'logout']);
 Route::get('/my_profile',[ProfileController::class, 'profile']);
 Route::put('/profile/{user}',[ProfileController::class, 'update']);
 
+Route::get('/my_forms/{user}',[UserFormController::class, 'my_forms']);
+
+Route::get('/print_form/{user_form}', [PDFController::class, 'print_form']);
+
 Route::group(['middleware' => ['auth', 'admin']], function() {
     Route::get('/users', [UserController::class, 'users']);
     Route::get('/users/{user}/activate', [UserController::class, 'activate']);
@@ -72,4 +78,8 @@ Route::group(['middleware' => ['auth', 'admin']], function() {
     Route::get('/forms/{form}/edit', [FormController::class, 'edit']);
     Route::put('/forms/{form}', [FormController::class, 'update']);
     Route::delete('/forms/{form}', [FormController::class, 'destroy']);
+
+    Route::get('/user_forms/{user}',[UserFormController::class, 'user_forms']);
+    Route::post('/user_forms/{user}', [UserFormController::class, 'store']);
+    Route::delete('/user_forms/{user_form}', [UserFormController::class, 'destroy']);
 });

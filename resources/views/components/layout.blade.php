@@ -49,7 +49,7 @@
         @auth
             @if (auth()->user()->activated)
                 <x-nav-item link='/my_profile' icon='table_view' navText='My Profile' />
-                <x-nav-item link='/my_forms' icon='receipt_long' navText='My Forms' />
+                <x-nav-item link='/my_forms/{{auth()->user()->id}}' icon='receipt_long' navText='My Forms' />
             @else
                 <x-nav-item link='#' icon='person' navText='Awaiting Activation' />
             @endif

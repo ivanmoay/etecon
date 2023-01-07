@@ -25,6 +25,8 @@ class ProfileController extends Controller
             'credentials' => 'required|max:255'
         ]);
 
+        $request->name = ucwords($request->name);
+
         User::where('id', $user->id)->update([
             'name' => $request->name,
             'phone_number' => $request->phone_number,

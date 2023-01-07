@@ -33,7 +33,8 @@
                     @foreach ($companies as $company)
                         <tr>  
                             <td>
-                                <p class="text-xs font-weight-bold mb-0">{{$company->company_logo}}</p>
+                                {{-- <p class="text-xs font-weight-bold mb-0">{{$company->company_logo}}</p> --}}
+                                <img src="{{ asset('/company_images/'.$company->company_logo) }}" class="avatar avatar-xl me-3 border-radius-lg" alt="{{$company->company_name}}">
                             </td>                      
                             <td>
                                 <p class="text-xs font-weight-bold mb-0">{{$company->company_name}}</p>

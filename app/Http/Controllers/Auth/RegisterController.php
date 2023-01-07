@@ -24,6 +24,9 @@ class RegisterController extends Controller
             'phone_number' => 'required|max:255',
             'credentials' => 'required|max:255'
         ]);
+
+        $request->name = ucwords($request->name);
+
         //store
         User::create([
             'email' => $request->email,

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Company;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class CompanyController extends Controller
 {
@@ -36,13 +37,17 @@ class CompanyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {        
         $formFields = $request->validate([
-            'company_logo' => 'required',
-            'company_name' => 'required'
-        ]);        
+            'company_name' => 'required',
+            'company_logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]); 
 
-        $formFields['company_logo'] = ucwords($formFields['company_logo']);
+        $imageName = time().'.'.$request->company_logo->extension();
+
+        $request->company_logo->move(public_path('company_images'), $imageName);
+
+        $formFields['company_logo'] = $imageName;
         $formFields['company_name'] = ucwords($formFields['company_name']);
         Company::create($formFields);
 
@@ -82,12 +87,38 @@ class CompanyController extends Controller
      */
     public function update(Request $request, Company $company)
     {
+        // $formFields = $request->validate([
+        //     'company_name' => 'required',
+        //     'company_logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        // ]); 
+
+        // $imageName = time().'.'.$request->company_logo->extension();
+
+        // $request->company_logo->move(public_path('company_images'), $imageName);
+
+        // $formFields['company_logo'] = $imageName;
+        // $formFields['company_name'] = ucwords($formFields['company_name']);
+        // Company::create($formFields);
+
+        // return redirect('/companies')->with('message', 'Company created successfully!');
+
         $formFields = $request->validate([
-            'company_logo' => 'required',
+            'company_logo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'company_name' => 'required'       
         ]);        
 
-        $formFields['company_logo'] = ucwords($formFields['company_logo']);
+        if ($request->hasFile('company_logo')) {
+            if(File::exists(public_path('company_images/'.$company->company_logo))){
+                File::delete(public_path('company_images/'.$company->company_logo));
+            }
+
+            $imageName = time().'.'.$request->company_logo->extension();
+
+            $request->company_logo->move(public_path('company_images'), $imageName);
+
+            $formFields['company_logo'] = $imageName;
+        }
+
         $formFields['company_name'] = ucwords($formFields['company_name']);
         $company->update($formFields);
 
@@ -105,6 +136,10 @@ class CompanyController extends Controller
         //TODO: change to !auth()->id() >= 3
         if(auth()->id() >= 3) {
             abort(403, 'Unauthorized Action');
+        }
+
+        if(File::exists(public_path('company_images/'.$company->company_logo))){
+            File::delete(public_path('company_images/'.$company->company_logo));
         }
         
         $company->delete();

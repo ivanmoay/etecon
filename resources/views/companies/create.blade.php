@@ -14,10 +14,13 @@
                 <div class="card-body p-3">
                   <div class="row">
 
-                    <form method="POST" action="/companies">
+                    <form method="POST" action="/companies" enctype="multipart/form-data">
                     @csrf
 
-                    <x-input-text label="Company Logo" name="company_logo" value="{{old('company_logo')}}"/>
+                    <label class="form-label">Company Logo</label>  @error('company_logo')<code>*{{$message}}</code> @enderror
+                    <div class="input-group input-group-outline mb-3">
+                        <input class="form-control" type="file" name="company_logo" id="formFile" required>
+                    </div>
 
                     <x-input-text label="Company Name" name="company_name" value="{{old('company_name')}}"/>
                     
