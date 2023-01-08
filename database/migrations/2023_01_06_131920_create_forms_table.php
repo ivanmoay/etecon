@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('forms', function (Blueprint $table) {
             $table->id();
             $table->string('form_name');
+            $table->string('slug');
             $table->timestamps();
         });
     }

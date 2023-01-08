@@ -39,7 +39,7 @@ class UserFormController extends Controller
             abort(403, 'Unauthorized action.');
         }
 
-        $user_forms = UserForm::where('user_id', $user->id)->get();
+        $user_forms = UserForm::where('user_id', $user->id)->orderBy('form_id', 'asc')->get();
 
         return view('my_forms.index', [
             'user_forms' => $user_forms

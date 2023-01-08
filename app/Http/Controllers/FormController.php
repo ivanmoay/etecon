@@ -38,7 +38,8 @@ class FormController extends Controller
     public function store(Request $request)
     {
         $formFields = $request->validate([
-            'form_name' => 'required'
+            'form_name' => 'required',
+            'slug' => 'required|unique:forms'
         ]);        
 
         $formFields['form_name'] = ucwords($formFields['form_name']);

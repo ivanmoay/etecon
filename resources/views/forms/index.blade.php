@@ -24,6 +24,7 @@
                   <thead>
                     <tr>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Form Name</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Slug</th>
                       <th colspan="2" class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7 ps-2"></th>
                     </tr>
                   </thead>
@@ -33,6 +34,9 @@
                         <tr>                       
                             <td>
                                 <p class="text-xs font-weight-bold mb-0">{{$form->form_name}}</p>
+                            </td>
+                            <td>
+                                <p class="text-xs font-weight-bold mb-0">{{$form->slug}}</p>
                             </td>
                             <td class="ms-auto text-end">                                
                                 <a class="btn btn-link text-dark px-3 mb-0" href="/forms/{{$form->id}}/edit"><i class="material-icons text-sm me-2">edit</i>Edit</a>

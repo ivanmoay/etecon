@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Company;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -33,6 +34,18 @@ class ProfileController extends Controller
             'credentials' => $request->credentials,
             'company_id' => $request->company_id
         ]);       
+
+        return redirect('/my_profile');
+    }
+
+    public function change_password(Request $request, User $user)
+    {
+        $this->validate($request, [
+            'password' => 'required|min:6|confirmed'
+        ]);
+
+        $formFields['password'] = Hash::make($request->password);
+        $user->update($formFields);
 
         return redirect('/my_profile');
     }

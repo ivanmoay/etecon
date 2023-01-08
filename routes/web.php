@@ -46,10 +46,12 @@ Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::get('/my_profile',[ProfileController::class, 'profile']);
 Route::put('/profile/{user}',[ProfileController::class, 'update']);
+Route::put('/profile/{user}/change_password',[ProfileController::class, 'change_password']);
 
 Route::get('/my_forms/{user}',[UserFormController::class, 'my_forms']);
 
-Route::get('/print_form/{user_form}', [PDFController::class, 'print_form']);
+Route::get('/encode_form/{user_form}', [PDFController::class, 'encode_form']);
+Route::post('/print_form/{user_form}', [PDFController::class, 'print_form']);
 
 Route::group(['middleware' => ['auth', 'admin']], function() {
     Route::get('/users', [UserController::class, 'users']);

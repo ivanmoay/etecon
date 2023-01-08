@@ -42,60 +42,51 @@
                 <div class="card-body">
                   <form method="POST" action="/register" role="form">
                   @csrf
+                  
+                    @error('email')<code>&nbsp; *{{'Email already taken.'}}</code>@enderror  
                     <div class="input-group input-group-outline mb-3">
-                      <label class="form-label">Email</label>
-                      <input type="email" class="form-control" name="email" value="{{old('email')}}">
-                      @error('email')
-                        <code>{{$message}}</code>
-                      @enderror    
+                      <label class="form-label">Email</label>     
+                      <input type="email" class="form-control" name="email" value="{{old('email')}}">                                       
                     </div>
-
+                        
+                    @error('name')<code>&nbsp; *{{$message}}</code>@enderror  
                     <div class="input-group input-group-outline mb-3">
                       <label class="form-label">Name</label>
                       <input type="text" class="form-control" name="name" value="{{old('name')}}">
-                      @error('name')
-                        <code>{{$message}}</code>
-                      @enderror
+                      
                     </div>  
                     
+                    @error('phone_number')<code>&nbsp; *{{$message}}</code>@enderror
                     <div class="input-group input-group-outline mb-3">
                       <label class="form-label">Phone Number</label>
-                      <input type="text" class="form-control" name="phone_number" value="{{old('phone_number')}}">
-                      @error('phone_number')
-                        <code>{{$message}}</code>
-                      @enderror
+                      <input type="text" class="form-control" name="phone_number" value="{{old('phone_number')}}">                      
                     </div>  
 
+                    @error('credentials')<code>&nbsp; *{{$message}}</code>@enderror
                     <div class="input-group input-group-outline mb-3">
                       <label class="form-label">Credentials</label>
-                      <input type="text" class="form-control" name="credentials" value="{{old('credentials')}}">
-                      @error('credentials')
-                        <code>{{$message}}</code>
-                      @enderror
+                      <input type="text" class="form-control" name="credentials" value="{{old('credentials')}}">                      
                     </div>  
 
+                    @error('password')<code>&nbsp; *{{$message}}</code>@enderror    
                     <div class="input-group input-group-outline mb-3">
                       <label class="form-label">Password</label>
                       <input type="password" class="form-control" name="password" value="{{old('password')}}">
-                      @error('password')
-                        <code>{{$message}}</code>
-                      @enderror    
+                      
                     </div>
 
+                    @error('password_confirmation')<code>&nbsp; *{{$message}}</code>@enderror    
                     <div class="input-group input-group-outline mb-3">
                       <label class="form-label">Repeat Password</label>
-                      <input type="password" class="form-control" name="password_confirmation" value="{{old('password_confirmation')}}">
-                      @error('password_confirmation')
-                        <code>{{$message}}</code>
-                      @enderror    
+                      <input type="password" class="form-control" name="password_confirmation" value="{{old('password_confirmation')}}">                      
                     </div>
 
-                    <div class="form-check form-check-info text-start ps-0">
+                    {{-- <div class="form-check form-check-info text-start ps-0">
                       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
                       <label class="form-check-label" for="flexCheckDefault">
                         I agree the <a href="#" class="text-dark font-weight-bolder">Terms and Conditions</a>
                       </label>
-                    </div>
+                    </div> --}}
                     <div class="text-center">
                       <button type="submit" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Sign Up</button>
                     </div>
