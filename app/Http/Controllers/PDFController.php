@@ -10,8 +10,8 @@ class PDFController extends Controller
 {
     public function encode_form(UserForm $userForm)
     {
-        if($userForm->form->slug == 'form-1'){
-            return view('forms.encode.form-1', [
+        if($userForm->form->slug == 'spiritual-care-initial-assessment-and-care-plan'){
+            return view('forms.encode.spiritual-care-initial-assessment-and-care-plan', [
                 'userForm' => $userForm
             ]);
         }
@@ -19,10 +19,12 @@ class PDFController extends Controller
 
     public function print_form(Request $request, UserForm $userForm)
     {
-        if($userForm->form->slug == 'form-1'){
+        if($userForm->form->slug == 'spiritual-care-initial-assessment-and-care-plan'){
+            //dd($request);
+            //$data = $request;
             $data = [
-                'service' => 'Hello world!'
-            ];
+    		    'service' => 'Hello world!'
+    	    ];
             $this->generate_pdf($data, $userForm->form->slug);
         }
     }
