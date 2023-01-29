@@ -14,7 +14,7 @@
                 <div class="card-body p-3">
                   <div class="row">
 
-                    <form method="POST" action="/print_form/{{$userForm->id}}">
+                    <form method="POST" action="/print_form/{{$userForm->id}}" target="_blank">
                     @csrf
 
                     <x-input-text label="Patient Name" name="patient_name"/>
@@ -22,14 +22,14 @@
                     <x-input-text label="ID #" name="id_number"/> 
 
                     <x-input-text label="Time In" name="time_in"/>
-                    <x-input-select label="Time In" name="time_in_select" items="{{'AM,PM'}}"/><br/>
+                    {{-- <x-input-select label="Time In" name="time_in_select" items="{{'AM,PM'}}"/><br/> --}}
 
                     <x-input-text label="Time Out" name="time_out"/>  
-                    <x-input-select label="Time Out" name="time_out_select" items="{{'AM,PM'}}"/><br/>
+                    {{-- <x-input-select label="Time Out" name="time_out_select" items="{{'AM,PM'}}"/><br/> --}}
 
-                    <x-input-select label="Assessment Obtained By" name="obtained_by" items="{{'Phone,Visit'}}"/><br/>
+                    {{-- <x-input-select label="Assessment Obtained By" name="obtained_by" items="{{'Phone,Visit'}}"/><br/> --}}
 
-                    <x-input-select label="Assessment Obtained From" name="obtained_from" items="{{'Patient,Caregiver Name'}}"/><br/>    
+                    {{-- <x-input-select label="Assessment Obtained From" name="obtained_from" items="{{'Patient,Caregiver Name'}}"/><br/>     --}}
                     <x-input-text label="Caregiver Name" name="obtained_from_name"/>
                     
                     <x-input-text label="Religious affiliation/denomination" name="religious_affiliation"/>
@@ -40,7 +40,35 @@
 
                     <x-input-text label="Phone" name="phone"/>
 
-                    <x-input-select label="Request patient's clergy to be notified" name="notify_clergy" items="{{'Yes,No'}}"/><br/>    
+                    {{-- <x-input-select label="Request patient's clergy to be notified" name="notify_clergy" items="{{'Yes,No'}}"/><br/>     --}}
+
+                    <x-input-text label="Guardian" name="guardian"/>
+
+                    <x-input-text label="Spiritual Strengths Comments" name="comments"/>
+
+                    <x-input-text label="Spiritual Issues Other" name="si_other"/>
+
+                    <x-input-text label="Spiritual Issues Comments" name="si_comments"/>
+
+                    <x-input-text label="Interventions Other Conflict Issues" name="interventions_other_conflict"/>
+
+                    <x-input-text label="Interventions Other" name="interventions_other"/>
+
+                    <x-input-text label="Interventions Frequency of Services" name="interventions_frequency"/>
+
+                    <x-input-text label="Interventions Comments" name="interventions_comments"/>
+
+                    <x-input-text label="Goals Other" name="goals_other"/>
+
+                    <label class="form-label">Summary/Comments</label>    
+                    <div class="input-group input-group-outline mb-3">
+                        <textarea class="form-control" name="summary" rows="3"></textarea>
+                    </div>
+
+                    <x-input-text label="Date Signed by Spiritual Coordinator" name="date_coordinator"/>
+
+                    <x-input-text label="Date Signed Visit Verified" name="date_verified"/>
+
                   
                         <br />
                         <div class="text-center">

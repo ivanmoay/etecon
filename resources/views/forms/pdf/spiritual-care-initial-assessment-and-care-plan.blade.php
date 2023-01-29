@@ -310,20 +310,20 @@
                <div class="name">
                 <p>Patient Name</p>
                 <br>
-                <p style="font-size: 1.2rem; letter-spacing: .7px;">John Doe</p>
+                <p style="font-size: 1rem; letter-spacing: .7px;">{{ ucwords($data->patient_name)}}</p>
                </div>
-                    <p class="border_left">ID # <br><br> <span style="font-size: 1.2rem; letter-spacing: .7px;">17155245</span></p>
+                    <p class="border_left">ID # <br><br> <span style="font-size: 1rem; letter-spacing: .7px;">{{$data->id_number}}</span></p>
                 <div class="time-container border_left">
                     <p class="time">
                     <div class="in time_layout">
-                        <p>Time In:&nbsp;&nbsp;&nbsp;&nbsp;2:52</p>
+                        <p>Time In:&nbsp;&nbsp;&nbsp;&nbsp;{{$data->time_in}}</p>
                         <div class="format">
                             <input type="checkbox">AM
                             <input type="checkbox">PM
                         </div>
                     </div>
                     <div class="out time_layout">
-                        <p>Time Out:&nbsp;  5:52</p>
+                        <p>Time Out:&nbsp;  {{$data->time_out}}</p>
                         <div class="format">
                             <input type="checkbox">AM
                             <input type="checkbox">PM
@@ -354,7 +354,7 @@
                             <div class="in time_layout">
                                 <div class="block">
                                     <p><input class="checkbox" type="checkbox">Patient</p>
-                                    <p><input class="checkbox" type="checkbox">Caregiver Name: <span style="font-size: 1.2rem; letter-spacing: .7px">Bruce Wayne</span></p>
+                                    <p><input class="checkbox" type="checkbox">Caregiver Name: <span style="font-size: 1rem; letter-spacing: .7px">{{ucwords($data->obtained_from_name)}}</span></p>
                                 </div>
                             </div>
                         </div>
@@ -363,17 +363,17 @@
                     <div class="assessment">
                         <h2 class="heading-assessment">Assessment</h2>
                         <p>Religious
-                            affiliation/denomination: <span style="font-size: 1.2rem; letter-spacing: .7px">Methodist</span>
+                            affiliation/denomination: <span style="font-size: 1rem; letter-spacing: .7px">{{ucwords($data->religious_affiliation)}}</span>
                         <p>Congregation name:
-                            <span style="font-size: 1.2rem; letter-spacing: .7px">Adorers of the Blood of Christ</span>
+                            <span style="font-size: 1rem; letter-spacing: .7px">{{ucwords($data->congregation_name)}}</span>
                         </p>
-                        <p>Patient's Clergy: <span style="font-size: 1.2rem; letter-spacing: .7px">Pastor Quibs Manalo</span>
+                        <p>Patient's Clergy: <span style="font-size: 1rem; letter-spacing: .7px">{{ucwords($data->patients_clergy)}}</span>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone:
-                            <span style="font-size: 1.2rem; letter-spacing: .7px">+63912345678</span></p>
+                            <span style="font-size: 1rem; letter-spacing: .7px">{{$data->phone}}</span></p>
                         <p>Request patient's clergy to be notified: &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="checkbox" /> Yes &nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="checkbox"/> Yes &nbsp;&nbsp;&nbsp;&nbsp;
                             &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="checkbox" /> No
+                            <input type="checkbox"/> No
                         </p>
                     </div>
                 
@@ -387,7 +387,7 @@
                                 <p><input type="checkbox"> Religious Organizations</p>
                             </div>
                             <p><input type="checkbox"> Others:
-                                <span style="font-size: 1.2rem; letter-spacing: .7px">Guardians</span>
+                                <span style="font-size: 1rem; letter-spacing: .7px">{{$data->guardian}}</span>
                             </p>
                         </div>
                     </div>
@@ -405,7 +405,7 @@
                         </div>
                         <p><input type="checkbox"> Belief in life after death</p>
                         <p><input type="checkbox"> Comments:
-                            <span style="font-size: 1.2rem; letter-spacing: .7px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, atque!</span>
+                            <span style="font-size: 1rem; letter-spacing: .7px">{{$data->comments}}</span>
                         </p>
                     </div>
     
@@ -429,9 +429,9 @@
                                 <p><input type="checkbox"> Anger</p>
                                 <p><input type="checkbox"> Suicidal</p>
                                 <p><input type="checkbox"> Other:
-                                    <span style="font-size: 1.2rem; letter-spacing: .7px">Lorem ipsum dolor sit Sequi.</span>
+                                    <span style="font-size: 1rem; letter-spacing: .7px">{{$data->si_other}}</span>
                                 </p>
-                                <p>Comments: <span style="font-size: 1.2rem; letter-spacing: .7px">Dolore nihil distinctio quos esse blanditiis eos.</span>
+                                <p>Comments: <span style="font-size: 1rem; letter-spacing: .7px">{{$data->si_comments}}</span>
                                 </p>
                             </div>
                             <div class="inter-container border_left">
@@ -458,16 +458,16 @@
                                         <input type="checkbox"> Reconciliation
                                         <br>
                                         <input type="checkbox"> Other:
-                                        <span style="font-size: 1.2rem; letter-spacing: .7px">Dolore nihil  quos.</span>
+                                        <span style="font-size: 1rem; letter-spacing: .7px">{{$data->interventions_other_conflict}}</span>
                                     </p>
                                 </div>
                                 </p>
                                 <p><input type="checkbox"> Other:
-                                    <span style="font-size: 1.2rem; letter-spacing: .7px">Social anxiety.</span></p>
+                                    <span style="font-size: 1rem; letter-spacing: .7px">{{$data->interventions_other}}</span></p>
                                 <p><input type="checkbox"> Frequency of Services:
-                                    <span style="font-size: 1.2rem; letter-spacing: .7px">Distinctio quos eos.</span></p>
+                                    <span style="font-size: 1rem; letter-spacing: .7px">{{$data->interventions_frequency}}</span></p>
                                 <p><input type="checkbox"> Comments:
-                                    <span style="font-size: 1.2rem; letter-spacing: .7px"> Blanditiis eos.</span></p>
+                                    <span style="font-size: 1rem; letter-spacing: .7px">{{$data->interventions_comments}}</span></p>
                             </div>
                         </div>
                 </div>
@@ -486,7 +486,7 @@
                                 mind/acceptance</p>
                             <p><input type="checkbox"> Patient/Caregiver will experience meaningful rituals</p>
                             <p><input type="checkbox">
-                                Other: <span style="font-size: 1.2rem; letter-spacing: .7px">Lorem consectetur adipisicing elit. Quibusdam rem voluptate eaque!</span>
+                                Other: <span style="font-size: 1rem; letter-spacing: .7px">{{$data->goals_other}}</span>
                             </p>
                         </div>
                     </div>
@@ -494,8 +494,19 @@
                     <div class="summary-container">
                         <h2>Summary/Comments:
                         </h2>
-                        <div style="min-width: 100%; color: #000;" class="lines">
-                            <hr>
+                        <div style="min-width: 100%; color: #000;" class="lines">                             
+                            @php
+                                $collection = explode("\n", $data->summary);
+                            @endphp                           
+                            @foreach ($collection as $item)
+                                <hr>
+                                <span style="font-size: 1rem; letter-spacing: .7px">{{$item}}</span>
+                                <br>                                
+                            @endforeach
+                            {{-- <p style="font-size: 1.2rem; letter-spacing: .7px">
+                                {{$data->summary}}
+                            </p> --}}
+                            {{-- <hr>
                             <span style="font-size: 1.2rem; letter-spacing: .7px">It amet consectetur adipisicing elit. Quibusdam rem voluptate eaque!</span>
                             <br>
                             <hr>
@@ -507,28 +518,28 @@
                             <hr>
                             <span style="font-size: 1.2rem; letter-spacing: .7px">Lorem uibusdam rem voluptate eaque amet consectetur adipisicing elit.</span>
                             <br>
-                            <hr>
+                            <hr> --}}
                         </div>
                         <div class="signature-form">
                             <div class="text-signature" style="border-bottom: 1px solid black; text-align: start;">
                                 <span class="triangle">&#9654;</span>
                                 <p class="title">Spiritual Coordinator Signature:
-                                    <img style="width: 80px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Arthur_Miller_signature.svg/1200px-Arthur_Miller_signature.svg.png" alt="signature">
+                                    {{-- <img style="width: 80px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Arthur_Miller_signature.svg/1200px-Arthur_Miller_signature.svg.png" alt="signature"> --}}
                                 </p>
                             </div>
 
                             <div style="border-bottom: 1px solid black" class="border_left">
-                                <span>Date : 1/11/2023</span>
+                                <span>Date : {{$data->date_coordinator}}</span>
                             </div>
 
                             <div class="text-signature" style="border-bottom: 1px solid black">
                                 <span class="triangle">&#9654;</span>
                                 <p class="title">Visit Verification Signature(per agency policy:  
-                                    <img style="width: 80px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Arthur_Miller_signature.svg/1200px-Arthur_Miller_signature.svg.png" alt="signature">
+                                    {{-- <img style="width: 80px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Arthur_Miller_signature.svg/1200px-Arthur_Miller_signature.svg.png" alt="signature"> --}}
                                 </div>
 
                             <div class="border_left">
-                                <span>Date : 1/11/2023</span>
+                                <span>Date : {{$data->date_verified}}</span>
                             </div>
                         </div>
                     </div>

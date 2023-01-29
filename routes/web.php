@@ -35,6 +35,7 @@ Route::get('/', function () {
     }
     
     return view('index');
+    //return view('forms.pdf.hospice-homehealth-aide-charting');
 });
 
 Route::get('/register', [RegisterController::class, 'register']);
