@@ -66,16 +66,16 @@
   <body>
     <div class="container" style="padding: 30px 0">
       <div class="flex" style="border-bottom: var(--border)">
-        <h3 style="margin-right: 10px; margin-bottom: 8px">
-          <input type="checkbox" /><span style="font-size:15px;">Hospice Aide</span> 
+        <h3 style="margin-right: 20px; margin-bottom: 8px">
+          <input type="checkbox" />Hospice Aide
         </h3>
-        <h3 style="margin-right: 10px; margin-bottom: 8px">
-          <input type="checkbox" /><span style="font-size:15px;">Home Health Aide</span> 
+        <h3 style="margin-right: 20px; margin-bottom: 8px">
+          <input type="checkbox" />Home Health Aide
         </h3>
-        <h3 style="margin-right: 10px; margin-bottom: 8px">
-          <input type="checkbox" /><span style="font-size:15px;">Homemaker</span> 
+        <h3 style="margin-right: 20px; margin-bottom: 8px">
+          <input type="checkbox" />Homemaker
         </h3>
-        <h2 style="margin-left: 3rem;"><span style="font-size:18px;">AIDE/HOMEMAKER CARE PLAN</span> </h2>
+        <h2 style="margin-left: 3rem;">AIDE/HOMEMAKER CARE PLAN</h2>
       </div>
       <div class="flex">
         <div
@@ -87,11 +87,11 @@
           "
         >
           <p>Patient Name</p>
-          <p>&nbsp;{{$data->patient_name}}</p>
+          <p>&nbsp;</p>
         </div>
         <div style="width: 20%; border-bottom: var(--border); padding: 4px">
           <p>ID #</p>
-          <p>&nbsp;{{$data->id_number}}</p>
+          <p>&nbsp;</p>
         </div>
         <div
           style="
@@ -102,7 +102,7 @@
           "
         >
           <p>Date of First Visit</p>
-          <p>&nbsp;{{$data->date_first_visit}}</p>
+          <p>&nbsp;</p>
         </div>
       </div>
       <div class="flex">
@@ -115,11 +115,11 @@
           "
         >
           <p>Team Leader</p>
-          <p>&nbsp;{{$data->team_leader}}</p>
+          <p>&nbsp;</p>
         </div>
         <div style="width: 20%; border-bottom: var(--border); padding: 4px">
           <p>Frequency</p>
-          <p>&nbsp;{{$data->frequency}}</p>
+          <p>&nbsp;</p>
         </div>
         <div
           style="
@@ -130,12 +130,12 @@
           "
         >
           <p>Caregiver Name</p>
-          <p>&nbsp;{{$data->caregiver_name}}</p>
+          <p>&nbsp;</p>
         </div>
       </div>
       <div style="border-bottom: var(--border); padding: 4px">
         <p>Diagnosis/Patient Problems</p>
-        <p>&nbsp;{{$data->diagnosis}}</p>
+        <p>&nbsp;</p>
       </div>
       <div class="flex">
         <div
@@ -147,11 +147,11 @@
           "
         >
           <p>Address</p>
-          <p>&nbsp;{{$data->address}}</p>
+          <p>&nbsp;</p>
         </div>
         <div style="width: 20%; border-bottom: var(--border); padding: 4px">
           <p>Phone #</p>
-          <p>&nbsp;{{$data->phone_number}}</p>
+          <p>&nbsp;</p>
         </div>
         <div
           style="
@@ -162,23 +162,17 @@
           "
         >
           <p>Date of Birth</p>
-          <p>&nbsp;{{$data->dob}}</p>
+          <p>&nbsp;</p>
         </div>
       </div>
       <div style="border-bottom: var(--border); padding: 4px">
         <p>Directions</p>
-        {{-- <p>&nbsp;{{$data->directions}}</p> --}}
-        @php
-            $collection = explode("\n", $data->directions);
-        @endphp                           
-        @foreach ($collection as $item)
-            <p>&nbsp;{{$item}}</p>                              
-        @endforeach
+        <p>&nbsp;</p>
       </div>
-      {{-- <div style="border-bottom: var(--border); padding: 4px">
+      <div style="border-bottom: var(--border); padding: 4px">
         <p>&nbsp;</p>
         <p>&nbsp;</p>
-      </div> --}}
+      </div>
 
       <p style="margin: 16px auto 8px">
         ASSIGNMENTS: Specify daily visit frequency with day of week.
@@ -199,19 +193,19 @@
             <tbody>
               <tr>
                 <td>Temperature</td>
-                <td>{{$data->temperature}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td>BP</td>
-                <td>{{$data->bp}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td>Pulse</td>
-                <td>{{$data->pulse}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td>Respiration</td>
-                <td>{{$data->respiration}}</td>
+                <td></td>
               </tr>
             </tbody>
           </table>
@@ -251,7 +245,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_tub}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td>
@@ -268,7 +262,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_bed}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td>Assist Bath-Chair</td>
@@ -281,7 +275,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_bath}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td>Shampoo Hair</td>
@@ -294,7 +288,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_shampoo}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td>Comb Hair</td>
@@ -307,7 +301,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_comb}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td>Mouth Care</td>
@@ -320,7 +314,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_mouth}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td>
@@ -337,7 +331,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_shave}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td colspan="5">HAND / FOOT CARE</td>
@@ -356,7 +350,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_clean_nails}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td colspan="5">ELIMINATION</td>
@@ -372,7 +366,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_perineal_care}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td>External Cath Care</td>
@@ -385,7 +379,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_cath_care}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td>Measure Cath Output</td>
@@ -398,7 +392,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_measure_cath}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td>Empty Drainage Bag</td>
@@ -411,7 +405,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_empty_drainage}}</td>
+                <td></td>
               </tr>
             </tbody>
           </table>
@@ -450,7 +444,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_apply_lotion}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td colspan="5">ACTIVITY</td>
@@ -469,7 +463,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_ambulation}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td>
@@ -486,7 +480,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_walker}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td>
@@ -502,7 +496,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_chair}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td>
@@ -518,7 +512,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_dangle}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td>
@@ -536,7 +530,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_exercise}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td>Reposition Patient</td>
@@ -549,7 +543,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_reposition}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td>Others:</td>
@@ -562,7 +556,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_others}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td colspan="5">MEALS</td>
@@ -578,7 +572,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_prepare_meals}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td>Feed</td>
@@ -591,7 +585,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_feed}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td>Setup</td>
@@ -604,7 +598,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_setup}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td>Offer Oral Supplement</td>
@@ -617,7 +611,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_offer_oral}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td colspan="5">HOUSEKEEPING</td>
@@ -633,10 +627,10 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_change_linens}}</td>
+                <td></td>
               </tr>
               <tr>
-                <td>Make Bed</td>
+                <td>make Bed</td>
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
@@ -646,7 +640,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_make_bed}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td>Straighten Room</td>
@@ -659,7 +653,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_straighten}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td>Laundry</td>
@@ -672,7 +666,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_laundry}}</td>
+                <td></td>
               </tr>
               <tr>
                 <td>Shopping</td>
@@ -685,7 +679,7 @@
                 <td style="text-align: center">
                   <input type="checkbox" />
                 </td>
-                <td>{{$data->f_shopping}}</td>
+                <td></td>
               </tr>
             </tbody>
           </table>
@@ -708,7 +702,7 @@
           <div style="width: 33.33333%">
             <p><input type="checkbox" />DNR</p>
             <p><input type="checkbox" />Lives Alone</p>
-            <p><input type="checkbox" />Lives with other: <u>{{$data->p_lives}}</u></p>
+            <p><input type="checkbox" />Lives with other: ____________</p>
             <p><input type="checkbox" />Alone during the day</p>
             <p>
               <span><input type="checkbox" />Bed Bound</span>
@@ -717,7 +711,7 @@
                 <input type="checkbox" />Up as tolerated
               </span>
             </p>
-            <p><input type="checkbox" />Amputee (specify): <u>{{$data->p_amputee}}</u></p>
+            <p><input type="checkbox" />Amputee (specify): __________</p>
           </div>
           <div style="width: 33.33333%">
             <p>
@@ -739,15 +733,15 @@
             <p><input type="checkbox" />Prone to fractures</p>
           </div>
           <div style="width: 33.33333%">
-            <p><input type="checkbox" />Prosthesis (specify): <u>{{$data->p_prosthesis}}</u></p>
-            <p><input type="checkbox" />Special Equipment: <u>{{$data->p_special_equipment}}</u></p>
+            <p><input type="checkbox" />Prosthesis (specify): __________</p>
+            <p><input type="checkbox" />Special Equipment: __________</p>
             <p><input type="checkbox" />Speech/Communication deficit</p>
             <p>
               <span><input type="checkbox" />Vision deficit</span>
               <span><input type="checkbox" />Glasses</span><br />
               <span style="margin-left: 16px">
                 <span><input type="checkbox" />Contacts</span>
-                <span><input type="checkbox" />Others: <u>{{$data->p_vision_others}}</u></span>
+                <span><input type="checkbox" />Others: ________</span>
               </span>
             </p>
             <p>
@@ -776,7 +770,7 @@
             <p>
               <span><input type="checkbox" />Diabetic</span><br />
               <span style="margin-left: 16px">
-                <span><input type="checkbox" />Diet: <u>{{$data->p_diet}}</u></span>
+                <span><input type="checkbox" />Diet: _________</span>
               </span>
             </p>
           </div>
@@ -795,7 +789,7 @@
             </p>
             <p>
               <span><input type="checkbox" />Allergies (specify):</span><br />
-              <u>{{$data->p_allergies}}</u>
+              _________________
             </p>
           </div>
         </div>
@@ -807,25 +801,25 @@
             <p><input type="checkbox" />Fall Precautions</p>
             <p><input type="checkbox" />24&deg; Supervision</p>
             <p><input type="checkbox" />Emergency Call System</p>
-            <p><input type="checkbox" />Other: <u>{{$data->s_other}}</u></p>
+            <p><input type="checkbox" />Other: ___________________________</p>
           </div>
           <div style="width: 33.33333%; border-right: var(--border)">
             <p style="margin-bottom: 8px">
               <input type="checkbox" />Other: (specify):
             </p>
-            <p><u>{{$data->so_precautions}}</u></p>
-            <p><u>{{$data->so_supervision}}</u></p>
-            <p><u>{{$data->so_emergency}}</u></p>
-            <p><u>{{$data->so_other}}</u></p>
+            <p>____________________________________</p>
+            <p>____________________________________</p>
+            <p>____________________________________</p>
+            <p>____________________________________</p>
           </div>
           <div style="width: 33.33333%">
             <p style="margin-bottom: 8px">
               <input type="checkbox" />Special Instructions:
             </p>
-            <p><u>{{$data->si_precautions}}</u></p>
-            <p><u>{{$data->si_supervision}}</u></p>
-            <p><u>{{$data->si_emergency}}</u></p>
-            <p><u>{{$data->si_other}}</u></p>
+            <p>____________________________________</p>
+            <p>____________________________________</p>
+            <p>____________________________________</p>
+            <p>____________________________________</p>
           </div>
         </div>
       </div>
@@ -845,15 +839,9 @@
             <p style="margin-bottom: 8px">
               <input type="checkbox" />Special Instructions:
             </p>
-            @php
-                $collection = explode("\n", $data->special_instructions);
-            @endphp                           
-            @foreach ($collection as $item)
-                <p><u>{{$item}}</u></p>                             
-            @endforeach
-            {{-- <p>______________________________________________________</p>
             <p>______________________________________________________</p>
-            <p>______________________________________________________</p> --}}
+            <p>______________________________________________________</p>
+            <p>______________________________________________________</p>
           </div>
         </div>
       </div>
@@ -891,7 +879,7 @@
         </div>
         <div style="width: 25%">
           <p style="padding: 8px">Date</p>
-          <p>&nbsp;{{$data->date}}</p>
+          <p>&nbsp;</p>
         </div>
       </div>
     </div>

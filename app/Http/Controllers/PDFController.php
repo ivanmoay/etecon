@@ -14,14 +14,16 @@ class PDFController extends Controller
     public function encode_form(UserForm $userForm)
     {
         if($userForm->form->slug == 'spiritual-care-initial-assessment-and-care-plan'){
-            return view('forms.encode.spiritual-care-initial-assessment-and-care-plan', [
-                'userForm' => $userForm
-            ]);
+            // return view('forms.encode.spiritual-care-initial-assessment-and-care-plan', [
+            //     'userForm' => $userForm
+            // ]);
+            return view('forms.pdf.spiritual-care-initial-assessment-and-care-plan');
         }
         if($userForm->form->slug == 'hospice-homehealth-aide-charting'){
-            return view('forms.encode.hospice-homehealth-aide-charting', [
-                'userForm' => $userForm
-            ]);
+            // return view('forms.encode.hospice-homehealth-aide-charting', [
+            //     'userForm' => $userForm
+            // ]);
+            return view('forms.pdf.hospice-homehealth-aide-charting');
         }
     }
 

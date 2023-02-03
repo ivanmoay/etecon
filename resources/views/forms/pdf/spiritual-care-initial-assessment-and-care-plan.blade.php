@@ -8,11 +8,15 @@
     <title>SCA Care Plan</title>
 
     <style>
-        /*   Config styles  */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        @page {
+            size: A4 portrait;
+            margin: 1cm;
         }
 
         body {
@@ -50,12 +54,11 @@
             flex-direction: column;
             gap: 10px;
         }
-/*  */
 
         .patient-info {
             border: 1px solid black;
             border-radius: 10px;
-            padding: 5px 8px;
+            padding: 1px 8px;
             height: 12vh;
             background-color: white;
 
@@ -79,10 +82,10 @@
         }
 
         .time-container {
-            display: flex;
-            gap: 3px;
-            flex-direction: column;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            place-items: center;
+            /* background-color: red; */
         }
 
         .in,
@@ -121,7 +124,6 @@
             display: grid;
             grid-template-columns: 1fr;
             grid-template-columns: 1fr;
-            /* grid-template-rows: repeat(2, 1fr); */
         }
 
         .assessment-obtained {
@@ -219,7 +221,6 @@
 
         .spiritual-issues_choices {
             height: auto;
-            /* padding: 1rem 0; */
             display: grid;
             grid-auto-flow: column;
 
@@ -236,7 +237,6 @@
 
         .signature-form {
             display: grid;
-            /* padding: 3px 0; */
             background-color: #ccc8c84a;
             height: auto;
             width: 100%;
@@ -281,19 +281,133 @@
             height: auto;
         }
 
+        .w-100 {
+            width: 100%;
+            /* background-color: red; */
+        }
 
-        
-@media print {
-   .form-container {
-         height: 200%;
-   }
 
-   .signature-form {
-    background-color: red;
-    left: -6px;
-   }
-}
+        .input {
+            border: none;
+            font-size: 12px;
+            width: 100%;
+            height: 2rem;
+        }
 
+        .time-input {
+            font-size: 12px;
+            width: 50px;
+            border: none;
+        }
+
+        .care-input {
+            width: 400px;
+            font-size: 12px;
+            border: none;
+        }
+
+
+        input:focus {
+            outline: none;
+        }
+
+        input {
+            border: 0;
+        }
+
+        p input.care-input.cus {
+            width: 65%;
+        }
+
+
+
+
+
+
+
+
+        .con-1st {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+        }
+
+        .time_container {
+            height: 100%;
+        }
+
+        .Ass-ob {
+            display: grid;
+            grid-auto-flow: column;
+            height: 2rem;
+            width: 90%;
+            padding-top: 5px;
+        }
+
+
+
+        @media print {
+            .form-container {
+                height: 200%;
+            }
+
+            .signature-form {
+                left: -6px;
+            }
+
+            .spiritual-issues_choices {
+                padding-bottom: 1.8rem;
+            }
+
+            .time-format-time {
+                /* background-color: yellowgreen !important;
+                margin-right: 0;
+                padding-left: 0;
+                display: grid; */
+                height: 100%;
+                align-items: center;
+                justify-content: start;
+                row-gap: 23px;
+                grid-template-columns: 2fr 1fr 1fr;
+            }
+
+            .assessment h2 {
+                width: 100%;
+            }
+
+            .input-care-line {
+                width: 60% !important;
+            }
+
+            .input-care-line-2 {
+                width: 70% !important;
+            }
+
+            .cn {
+                width: 110%;
+            }
+
+            .cn-cn {
+                margin-left: 5px;
+                width: 50%;
+            }
+
+            /* .freq {
+                background-color: red;
+            }
+
+            .freq-input {
+                background-color: blue;
+            } */
+/* 
+            .freq-text {
+                background-color: violet;
+            }
+/* 
+            .supportive-assistance {
+                width: 90%;
+            } */
+        }
     </style>
 </head>
 
@@ -307,29 +421,41 @@
         <!--!   Patient Information Form  -->
         <div class="form-container">
             <div class="patient-info">
-               <div class="name">
-                <p>Patient Name</p>
-                <br>
-                <p style="font-size: 1rem; letter-spacing: .7px;">{{ ucwords($data->patient_name)}}</p>
-               </div>
-                    <p class="border_left">ID # <br><br> <span style="font-size: 1rem; letter-spacing: .7px;">{{$data->id_number}}</span></p>
-                <div class="time-container border_left">
-                    <p class="time">
-                    <div class="in time_layout">
-                        <p>Time In:&nbsp;&nbsp;&nbsp;&nbsp;{{$data->time_in}}</p>
-                        <div class="format">
-                            <input type="checkbox">AM
-                            <input type="checkbox">PM
+                <div class="name">
+                    <p>Patient Name</p>
+                    <input class="input" type="text" />
+                </div>
+                <p class="border_left">ID # <br>
+                    <input class="input" type="text">
+                </p>
+
+                <div class="time_container border_left">
+                    <div class="con-1st">
+                        <div style="width: 100%;">
+                            <p>Time In: </p>
+                        </div>
+                        <div style="min-width: 100%; color: #000; background-color: reed;" class="lines">
+                            <input class="input" type="text" style="width: 100%; padding: 0; margin: 0; height: auto;">
+                            <hr style="width: 35px;">
+                        </div>
+                        <div style="text-align: end;">
+                            <p><input type="checkbox"> AM </p>
+                            <p><input type="checkbox"> PM</p>
                         </div>
                     </div>
-                    <div class="out time_layout">
-                        <p>Time Out:&nbsp;  {{$data->time_out}}</p>
-                        <div class="format">
-                            <input type="checkbox">AM
-                            <input type="checkbox">PM
+                    <div class="con-1st">
+                        <div style="width: 100%;">
+                            <p>Time Out:</p>
+                        </div>
+                        <div style="min-width: 100%; color: #000;" class="lines">
+                            <input class="input" type="text" style="width: 100%; padding: 0; margin: 0; height: auto;">
+                            <hr style="width: 35px;">
+                        </div>
+                        <div style="text-align: end;">
+                            <p><input type="checkbox"> AM </p>
+                            <p><input type="checkbox"> PM</p>
                         </div>
                     </div>
-                    </p>
                 </div>
             </div>
 
@@ -351,10 +477,19 @@
                         </div>
                         <div class="obtained-from border_left">
                             <h2>Assessment Obtained From:</h2>
-                            <div class="in time_layout">
-                                <div class="block">
-                                    <p><input class="checkbox" type="checkbox">Patient</p>
-                                    <p><input class="checkbox" type="checkbox">Caregiver Name: <span style="font-size: 1rem; letter-spacing: .7px">{{ucwords($data->obtained_from_name)}}</span></p>
+                            <div class="Ass-ob">
+                                <div>
+                                    <p><input type="checkbox"> Patient</p>
+                                </div>
+                                <div class="cn" style="display: flex;">
+                                    <div class="cn-cn">
+                                        <p><input type="checkbox"> Caregiver Name: </p>
+                                    </div>
+                                    <div>
+                                        &nbsp;<input type="text" style="width: 90%;">
+                                        &nbsp;
+                                        <hr>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -362,21 +497,49 @@
 
                     <div class="assessment">
                         <h2 class="heading-assessment">Assessment</h2>
-                        <p>Religious
-                            affiliation/denomination: <span style="font-size: 1rem; letter-spacing: .7px">{{ucwords($data->religious_affiliation)}}</span>
-                        <p>Congregation name:
-                            <span style="font-size: 1rem; letter-spacing: .7px">{{ucwords($data->congregation_name)}}</span>
-                        </p>
-                        <p>Patient's Clergy: <span style="font-size: 1rem; letter-spacing: .7px">{{ucwords($data->patients_clergy)}}</span>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone:
-                            <span style="font-size: 1rem; letter-spacing: .7px">{{$data->phone}}</span></p>
+                        <div style="display: flex;">
+                            <p>Religious affiliation/denomination: &nbsp;</p>
+                            <div style="width: 60%;">
+                                <input class="care-input input-care-line" type="text" style="width: 100%;">
+                                <hr>
+                            </div>
+                        </div>
+
+                        <div style="display: flex;">
+                            <p>Congregation name: &nbsp;</p>
+                            <div style="width: 66%;">
+                                <input class="care-input input-care-line" type="text" style="width: 100%;">
+                                <hr>
+                            </div>
+                        </div>
+
+                        <div class="Ass-ob">
+                            <div style="display: flex;">
+                                <p>Patient's Clergy: &nbsp;</p>
+                                <div style="width: 66%;">
+                                    <input class="care-input input-care-line" type="text" style="width: 100%;">
+                                    <hr>
+                                </div>
+                            </div>
+                            <div style="display: flex;">
+                                <div>
+                                    <p>Phone: </p>
+                                </div>
+                                <div>
+                                    &nbsp;<input type="text" style="width: 90%;">
+                                    &nbsp;
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+
                         <p>Request patient's clergy to be notified: &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="checkbox"/> Yes &nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="checkbox" /> Yes &nbsp;&nbsp;&nbsp;&nbsp;
                             &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="checkbox"/> No
+                            <input type="checkbox" /> No
                         </p>
                     </div>
-                
+
                     <div class="assistance">
                         <div class="supportive-assistance">
                             <h2>Supportive Assistance:</h2>
@@ -386,9 +549,14 @@
                                 <p><input type="checkbox"> Community Organizations</p>
                                 <p><input type="checkbox"> Religious Organizations</p>
                             </div>
-                            <p><input type="checkbox"> Others:
-                                <span style="font-size: 1rem; letter-spacing: .7px">{{$data->guardian}}</span>
-                            </p>
+                            <div style="display: flex;">
+                                <p><input type="checkbox"> Others: &nbsp;</p>
+                                <div style="width: 66%;">
+                                    <input class="care-input input-care-line" type="text" style="width: 100%;">
+                                    <hr>
+                                </div>
+                            </div>
+                           
                         </div>
                     </div>
                     <div class="spiritual-strengths">
@@ -404,11 +572,15 @@
                             <p><input type="checkbox"> Available spiritual support</p>
                         </div>
                         <p><input type="checkbox"> Belief in life after death</p>
-                        <p><input type="checkbox"> Comments:
-                            <span style="font-size: 1rem; letter-spacing: .7px">{{$data->comments}}</span>
-                        </p>
+                        <div style="display: flex;">
+                            <p><input type="checkbox"> Others: &nbsp;</p>
+                            <div style="width: 66%;">
+                                <input class="care-input input-care-line" type="text" style="width: 100%;">
+                                <hr>
+                            </div>
+                        </div>
                     </div>
-    
+
                     <div class="spiritual-issue_container">
                         <div class="spiritual-issues_choices">
                             <div class="si-container">
@@ -428,20 +600,29 @@
                                 <p><input type="checkbox"> Depression</p>
                                 <p><input type="checkbox"> Anger</p>
                                 <p><input type="checkbox"> Suicidal</p>
-                                <p><input type="checkbox"> Other:
-                                    <span style="font-size: 1rem; letter-spacing: .7px">{{$data->si_other}}</span>
-                                </p>
-                                <p>Comments: <span style="font-size: 1rem; letter-spacing: .7px">{{$data->si_comments}}</span>
-                                </p>
+                                <div style="display: flex;">
+                                    <p><input type="checkbox"> Others: &nbsp;</p>
+                                    <div style="width: 66%;">
+                                        <input class="care-input input-care-line" type="text" style="width: 100%;">
+                                        <hr>
+                                    </div>
+                                </div>
+                                <div style="display: flex;">
+                                    <p><input type="checkbox"> Comments: &nbsp;</p>
+                                    <div style="width: 66%;">
+                                        <input class="care-input input-care-line" type="text" style="width: 100%;">
+                                        <hr>
+                                    </div>
+                                </div>
                             </div>
                             <div class="inter-container border_left">
-                                <!-- <p>: (Check all that apply)</p> -->
                                 <h2>Interventions: <span style="font-size: 13px; font-weight: 500;">(Check all that
                                         apply)</span></h2>
                                 <p><input type="checkbox"> Estasblish contact by phone or visit</p>
                                 <p><input type="checkbox"> Read/Pray with patient</p>
                                 <p><input type="checkbox"> Explore spiritual resources for facing illness and death</p>
-                                <p><input type="checkbox"> Discern spiritual gifts: Love, Hope, Peace, Acceptance, Courage,
+                                <p><input type="checkbox"> Discern spiritual gifts: Love, Hope, Peace, Acceptance,
+                                    Courage,
                                     Faith</p>
                                 <p><input type="checkbox"> Build a relationship of trust and support</p>
                                 <p><input type="checkbox"> Enable life review</p>
@@ -457,20 +638,40 @@
                                         <input type="checkbox"> Anger
                                         <input type="checkbox"> Reconciliation
                                         <br>
-                                        <input type="checkbox"> Other:
-                                        <span style="font-size: 1rem; letter-spacing: .7px">{{$data->interventions_other_conflict}}</span>
+                                        <div style="display: flex;">
+                                            <p><input type="checkbox"> Others: &nbsp;</p>
+                                            <div style="width: 66%;">
+                                                <input class="care-input input-care-line" type="text" style="width: 100%;">
+                                                <hr>
+                                            </div>
+                                        </div>
                                     </p>
                                 </div>
                                 </p>
-                                <p><input type="checkbox"> Other:
-                                    <span style="font-size: 1rem; letter-spacing: .7px">{{$data->interventions_other}}</span></p>
-                                <p><input type="checkbox"> Frequency of Services:
-                                    <span style="font-size: 1rem; letter-spacing: .7px">{{$data->interventions_frequency}}</span></p>
-                                <p><input type="checkbox"> Comments:
-                                    <span style="font-size: 1rem; letter-spacing: .7px">{{$data->interventions_comments}}</span></p>
+                                <div style="display: flex;">
+                                    <p><input type="checkbox"> Others: &nbsp;</p>
+                                    <div style="width: 66%;">
+                                        <input class="care-input input-care-line" type="text" style="width: 100%;">
+                                        <hr>
+                                    </div>
+                                </div>
+                                <div class="freq" style="display: flex;">
+                                    <p class="freq-text"><input type="checkbox"> Frequency of Services: &nbsp;</p>
+                                    <div class="freq-input" style="width: 66%;">
+                                        <input class="care-input input-care-line" type="text" style="width: 100%;">
+                                        <hr>
+                                    </div>
+                                </div>
+                                <div style="display: flex;">
+                                    <p><input type="checkbox"> Comments: &nbsp;</p>
+                                    <div style="width: 66%;">
+                                        <input class="care-input input-care-line" type="text" style="width: 100%;">
+                                        <hr>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                </div>
+                    </div>
 
 
 
@@ -485,61 +686,74 @@
                             <p><input type="checkbox"> Patient/Caregiver will express feeling of increased peace of
                                 mind/acceptance</p>
                             <p><input type="checkbox"> Patient/Caregiver will experience meaningful rituals</p>
-                            <p><input type="checkbox">
-                                Other: <span style="font-size: 1rem; letter-spacing: .7px">{{$data->goals_other}}</span>
-                            </p>
+                            <div style="display: flex;">
+                                <p><input type="checkbox"> Others: &nbsp;</p>
+                                <div style="width: 100%;">
+                                    <input class="care-input input-care-line" type="text" style="width: 100%;">
+                                    <hr>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="summary-container">
                         <h2>Summary/Comments:
                         </h2>
-                        <div style="min-width: 100%; color: #000;" class="lines">                             
-                            @php
-                                $collection = explode("\n", $data->summary);
-                            @endphp                           
-                            @foreach ($collection as $item)
-                                <hr>
-                                <span style="font-size: 1rem; letter-spacing: .7px">{{$item}}</span>
-                                <br>                                
-                            @endforeach
-                            {{-- <p style="font-size: 1.2rem; letter-spacing: .7px">
-                                {{$data->summary}}
-                            </p> --}}
-                            {{-- <hr>
-                            <span style="font-size: 1.2rem; letter-spacing: .7px">It amet consectetur adipisicing elit. Quibusdam rem voluptate eaque!</span>
+                        <div style="min-width: 100%; color: #000;" class="lines">
+                            <hr>
+                            <input class="care-input" style="width: 100%;" type="text"
+                                placeholder="_____________________________________________________________________________________________________________________________________">
                             <br>
                             <hr>
-                            <span style="font-size: 1.2rem; letter-spacing: .7px">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam rem voluptate eaque!</span>
+                            <input class="care-input" style="width: 100%;" type="text"
+                                placeholder="_____________________________________________________________________________________________________________________________________">
                             <br>
                             <hr>
-                            <span style="font-size: 1.2rem; letter-spacing: .7px"> Mollitia repellat. Nihil, a? Aliquid, quos voluptate!</span>
+                            <input class="care-input" style="width: 100%;" type="text"
+                                placeholder="_____________________________________________________________________________________________________________________________________">
                             <br>
                             <hr>
-                            <span style="font-size: 1.2rem; letter-spacing: .7px">Lorem uibusdam rem voluptate eaque amet consectetur adipisicing elit.</span>
+                            <input class="care-input" style="width: 100%;" type="text"
+                                placeholder="_____________________________________________________________________________________________________________________________________">
                             <br>
-                            <hr> --}}
+                            <hr>
                         </div>
                         <div class="signature-form">
                             <div class="text-signature" style="border-bottom: 1px solid black; text-align: start;">
                                 <span class="triangle">&#9654;</span>
                                 <p class="title">Spiritual Coordinator Signature:
-                                    {{-- <img style="width: 80px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Arthur_Miller_signature.svg/1200px-Arthur_Miller_signature.svg.png" alt="signature"> --}}
+                                    <!-- <img style="width: 80px;"
+                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Arthur_Miller_signature.svg/1200px-Arthur_Miller_signature.svg.png"
+                                        alt="signature"> -->
                                 </p>
                             </div>
 
-                            <div style="border-bottom: 1px solid black" class="border_left">
-                                <span>Date : {{$data->date_coordinator}}</span>
+                            <div style="border-bottom: 1px solid black; padding-top: 5px;" class="border_left">
+                                <div style="display: flex;">
+                                    <div>Date: &nbsp;</div>
+                                    <div>
+                                        <input class="care-input input-care-line" type="text" style="width: 100%; background-color: transparent;">
+                                        <hr>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="text-signature" style="border-bottom: 1px solid black">
+                            <div class="text-signature" style="border-bottom: 1px solid black;">
                                 <span class="triangle">&#9654;</span>
-                                <p class="title">Visit Verification Signature(per agency policy:  
-                                    {{-- <img style="width: 80px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Arthur_Miller_signature.svg/1200px-Arthur_Miller_signature.svg.png" alt="signature"> --}}
-                                </div>
+                                <p class="title">Visit Verification Signature(per agency policy:
+                                    <!-- <img style="width: 80px;"
+                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Arthur_Miller_signature.svg/1200px-Arthur_Miller_signature.svg.png"
+                                        alt="signature"> -->
+                            </div>
 
                             <div class="border_left">
-                                <span>Date : {{$data->date_verified}}</span>
+                                <div style="display: flex; padding-top: 5px;">
+                                    <div>Date: &nbsp;</div>
+                                    <div>
+                                        <input class="care-input input-care-line" type="text" style="width: 100%; background-color: transparent;">
+                                        <hr>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

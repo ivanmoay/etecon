@@ -20,7 +20,7 @@
                     @foreach ($user_forms as $user_form)
                         <tr>                        
                             <td>
-                                <p class="text-m font-weight-bold mb-0"><a href="/encode_form/{{$user_form->id}}">{{$user_form->form->form_name}}</a></p>
+                                <p class="text-m font-weight-bold mb-0"><a href="/encode_form/{{$user_form->id}}" target="_blank">{{$user_form->form->form_name}}</a></p>
                             </td>
                         </tr>
                     @endforeach     
