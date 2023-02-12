@@ -25,6 +25,16 @@ class PDFController extends Controller
             // ]);
             return view('forms.pdf.hospice-homehealth-aide-charting');
         }
+        
+        if($userForm->form->slug == 'hospice-bereavement-initial-and-care-plan'){
+            return view('forms.pdf.hospice-bereavement-initial-and-care-plan');
+        }
+        if($userForm->form->slug == 'hospice-initial-order-form'){
+            return view('forms.pdf.hospice-initial-order-form');
+        }
+        if($userForm->form->slug == 'hospice-social-worker-initial-assessment-form'){
+            return view('forms.pdf.hospice-social-worker-initial-assessment-form');
+        }
     }
 
     public function print_form(Request $request, UserForm $userForm)
