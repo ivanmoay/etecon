@@ -8,6 +8,7 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserFormController;
 use App\Http\Controllers\Auth\UserController;
+use App\Http\Controllers\DiagnosisController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 
@@ -54,6 +55,10 @@ Route::get('/my_forms/{user}',[UserFormController::class, 'my_forms']);
 Route::get('/encode_form/{user_form}', [PDFController::class, 'encode_form']);
 Route::post('/print_form/{user_form}', [PDFController::class, 'print_form']);
 
+Route::get('/hospice_eligibility_requirements',[DiagnosisController::class, 'hospice_eligibility_requirements']);
+Route::get('/her/{diagnosis}/show',[DiagnosisController::class, 'her_show']);
+Route::post('/her/{diagnosis}',[DiagnosisController::class, 'answer_her']);
+
 Route::group(['middleware' => ['auth', 'admin']], function() {
     Route::get('/users', [UserController::class, 'users']);
     Route::get('/users/{user}/activate', [UserController::class, 'activate']);
@@ -85,4 +90,15 @@ Route::group(['middleware' => ['auth', 'admin']], function() {
     Route::get('/user_forms/{user}',[UserFormController::class, 'user_forms']);
     Route::post('/user_forms/{user}', [UserFormController::class, 'store']);
     Route::delete('/user_forms/{user_form}', [UserFormController::class, 'destroy']);
+
+    Route::get('/diagnosis',[DiagnosisController::class, 'index']);
+    Route::get('/diagnosis/create', [DiagnosisController::class, 'create']);
+    Route::post('/diagnosis', [DiagnosisController::class, 'store']);
+    Route::get('/diagnosis/{diagnosis}/edit', [DiagnosisController::class, 'edit']);
+    Route::put('/diagnosis/{diagnosis}', [DiagnosisController::class, 'update']);
+    Route::delete('/diagnosis/{diagnosis}', [DiagnosisController::class, 'destroy']);
+
+    Route::get('/diagnosis/{diagnosis}/show',[DiagnosisController::class, 'show']);
+    Route::post('/questions/{diagnosis}/',[DiagnosisController::class, 'store_question']);
+    Route::delete('/questions/{question}', [DiagnosisController::class, 'delete_question']);
 });

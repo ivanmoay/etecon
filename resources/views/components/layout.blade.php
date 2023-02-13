@@ -50,6 +50,7 @@
             @if (auth()->user()->activated)
                 <x-nav-item link='/my_profile' icon='table_view' navText='My Profile' />
                 <x-nav-item link='/my_forms/{{auth()->user()->id}}' icon='receipt_long' navText='My Forms' />
+                <x-nav-item link='/hospice_eligibility_requirements' icon='table_view' navText='Hospice Eligibility' />
             @else
                 <x-nav-item link='#' icon='person' navText='Awaiting Activation' />
             @endif
@@ -57,6 +58,7 @@
                 <x-nav-item link='/users' icon='person' navText='Users' />
                 <x-nav-item link='/companies' icon='person' navText='Companies' />
                 <x-nav-item link='/doctors' icon='person' navText='Doctors' />
+                <x-nav-item link='/diagnosis' icon='person' navText='Diagnosis' />
             @endif
             @if (auth()->user()->user_type == 3)
                 <x-nav-item link='/forms' icon='receipt_long' navText='Forms' />
