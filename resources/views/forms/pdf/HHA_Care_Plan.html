@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hospice Charting</title>
+  <title>HHA Care Plan</title>
 
   <style>
     * {
@@ -17,6 +17,10 @@
       --sky-blue: rgb(148, 187, 233);
       --sky-blue-value: 148, 187, 233;
       font-family: arial, sans-serif;
+    }
+
+    .bg-white {
+      background-color: #fff;
     }
 
     table {
@@ -55,8 +59,7 @@
     .container {
       max-width: 960px;
       margin: auto;
-      background-color: #E8F7E8;
-      /* padding: 20px 5px !important; */
+      background-color: #41FDFE;
     }
 
     .flex {
@@ -88,11 +91,8 @@
 <body>
   <div class="container" style="padding: 30px 10px; margin-top: 1rem; margin-bottom: 1rem; border-radius: 25px;">
     <div class="brand-container">
-      <div class="flex-container" style="display: flex; flex-direction: row; align-items: center;">
-        @if (!empty(Auth::user()->company_id))
-          <img src="{{ asset('/company_images/'.@Auth::user()->company->company_logo) }}" height="60" alt="final" border="0">&nbsp;
-          <p>{{@Auth::user()->company->company_name}}</p>
-        @endif
+      <div class="flex-container">
+        <img src="https://i.ibb.co/kSr11h4/final.png" width="200" alt="final" border="0">
       </div>
     </div>
     <div class="flex" style="border-bottom: var(--border)">
@@ -107,7 +107,7 @@
       </h3>
       <h2 style="margin-left: 3rem;">AIDE/HOMEMAKER CARE PLAN</h2>
     </div>
-    <div class="flex">
+    <div class="flex bg-white">
       <div style="
             width: 50%;
             border-right: var(--border);
@@ -131,7 +131,7 @@
         <input type="text">
       </div>
     </div>
-    <div class="flex">
+    <div class="flex bg-white">
       <div style="
             width: 40%;
             border-right: var(--border);
@@ -155,11 +155,11 @@
         <input type="text">
       </div>
     </div>
-    <div style="border-bottom: var(--border); padding: 4px">
+    <div class="bg-white" style="border-bottom: var(--border); padding: 4px">
       <p>Diagnosis/Patient Problems</p>
       <input type="text">
     </div>
-    <div class="flex">
+    <div class="flex bg-white">
       <div style="
             width: 60%;
             border-right: var(--border);
@@ -183,19 +183,19 @@
         <input type="text">
       </div>
     </div>
-    <div style="border-bottom: var(--border); padding: 4px">
+    <div class="bg-white" style="border-bottom: var(--border); padding: 4px">
       <p>Directions</p>
       <input type="text">
     </div>
-    <div style="border-bottom: var(--border); padding: 4px">
+    <div class="bg-white" style="border-bottom: var(--border); padding: 4px">
       <p>&nbsp;</p>
       <p>&nbsp;</p>
     </div>
 
-    <p style="margin: 16px auto 8px">
+    <p class="bg-white" style="margin: 16px auto 8px">
       ASSIGNMENTS: Specify daily visit frequency with day of week.
     </p>
-    <div class="flex">
+    <div class="flex bg-white">
       <div style="width: 50%">
         <table>
           <colgroup>
@@ -703,7 +703,7 @@
         </table>
       </div>
     </div>
-    <div class="flex" style="margin: 16px auto 8px; border-bottom: var(--border)">
+    <div class="flex bg-white" style="margin: 16px auto 8px; border-bottom: var(--border)">
       <p style="margin-right: 20px; margin-bottom: 8px">
         <input type="checkbox" />DO CPR
       </p>
@@ -711,7 +711,7 @@
         <input type="checkbox" />DO <strong>NOT</strong> DO CPR
       </p>
     </div>
-    <div style="margin-bottom: 8px; border-bottom: var(--border)">
+    <div class="bg-white" style="margin-bottom: 8px; border-bottom: var(--border)">
       <p style="font-weight: bold">PERTINENT INFORMATION</p>
       <div class="flex" style="margin-top: 8px">
         <div style="width: 33.33333%">
@@ -824,7 +824,7 @@
         </div>
       </div>
     </div>
-    <div style="margin-bottom: 8px; border-bottom: var(--border)">
+    <div class="bg-white" style="margin-bottom: 8px; border-bottom: var(--border)">
       <div class="flex">
         <div style="width: 33.33333%; border-right: var(--border)">
           <p style="font-weight: bold; margin-bottom: 8px">SAFETY</p>
@@ -856,7 +856,7 @@
         </div>
       </div>
     </div>
-    <div style="margin-bottom: 8px">
+    <div class="bg-white" style="margin-bottom: 8px">
       <div class="flex">
         <div style="width: 50%; padding-right: 2px">
           <p style="font-weight: bold; margin-bottom: 8px">
@@ -878,7 +878,7 @@
         </div>
       </div>
     </div>
-    <div class="flex" style="border: var(--border)">
+    <div class="flex bg-white" style="border: var(--border)">
       <div style="width: 25%; border-right: var(--border)">
         <p style="text-align: center; padding: 8px">
           Review Date / Signature
@@ -904,7 +904,7 @@
         <input type="text">
       </div>
     </div>
-    <div class="flex" style="border: var(--border)">
+    <div class="flex bg-white" style="border: var(--border)">
       <div style="width: 75%; border-right: var(--border); display: flex;">
         <span style="font-size: 2rem;" class="triangle">&#9654;</span>
         <p style="padding: 8px">RN / Therapist Signature</p>
