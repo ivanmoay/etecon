@@ -91,7 +91,7 @@
       <div class="flex-container" style="display: flex; flex-direction: row; align-items: center;">
         @if (!empty(Auth::user()->company_id))
           <img src="{{ asset('/company_images/'.@Auth::user()->company->company_logo) }}" height="60" alt="final" border="0">&nbsp;
-          <p>{{@Auth::user()->company->company_name}}</p>
+          <h3>{{@Auth::user()->company->company_name}}</h3>
         @endif
       </div>
     </div>
@@ -211,19 +211,19 @@
           <tbody>
             <tr>
               <td>Temperature</td>
-              <td><input type="text"></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td>BP</td>
-              <td><input type="text"></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td>Pulse</td>
-              <td><input type="text"></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td>Respiration</td>
-              <td><input type="text"></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
           </tbody>
         </table>
@@ -263,7 +263,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td>
@@ -280,7 +280,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td>Assist Bath-Chair</td>
@@ -293,7 +293,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td>Shampoo Hair</td>
@@ -306,7 +306,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td>Comb Hair</td>
@@ -319,7 +319,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td>Mouth Care</td>
@@ -332,7 +332,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td>
@@ -349,7 +349,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td colspan="5">HAND / FOOT CARE</td>
@@ -368,7 +368,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td colspan="5">ELIMINATION</td>
@@ -384,7 +384,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td>External Cath Care</td>
@@ -397,7 +397,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td>Measure Cath Output</td>
@@ -410,7 +410,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td>Empty Drainage Bag</td>
@@ -423,7 +423,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
           </tbody>
         </table>
@@ -462,7 +462,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td colspan="5">ACTIVITY</td>
@@ -481,7 +481,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td>
@@ -498,7 +498,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td>
@@ -514,7 +514,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td>
@@ -530,7 +530,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td>
@@ -548,7 +548,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td>Reposition Patient</td>
@@ -561,7 +561,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td>Others:</td>
@@ -574,7 +574,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td colspan="5">MEALS</td>
@@ -590,7 +590,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td>Feed</td>
@@ -603,7 +603,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td>Setup</td>
@@ -616,7 +616,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td>Offer Oral Supplement</td>
@@ -629,7 +629,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td colspan="5">HOUSEKEEPING</td>
@@ -645,7 +645,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td>Make Bed</td>
@@ -658,7 +658,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td>Straighten Room</td>
@@ -671,7 +671,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td>Laundry</td>
@@ -684,7 +684,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
             <tr>
               <td>Shopping</td>
@@ -697,7 +697,7 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td><input type="text" style="border-bottom: 0"></td>
             </tr>
           </tbody>
         </table>

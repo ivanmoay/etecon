@@ -27,9 +27,10 @@
         .wrapper {
             width: 1160px;
             margin: auto;
-            margin-top: 100px;
+            margin-top: 20px;
             background-color: #568203b6;
-            padding: 0 12px;
+            padding: 0 12px;    
+            padding-top: 12px;        
             padding-bottom: 15px;
             border-radius: 25px;
         }
@@ -239,10 +240,11 @@
 
 <body>
     <div class="wrapper">
-        <div class="brand-container">
-            <div class="flex-container">
-                <img src="https://i.ibb.co/kSr11h4/final.png" width="200" alt="final" border="0">
-            </div>
+        <div style="display: flex; align-items: center; margin-bottom: 8px;">
+            @if (!empty(Auth::user()->company_id))
+                <img src="{{ asset('/company_images/'.@Auth::user()->company->company_logo) }}" height="60" alt="final" border="0">&nbsp;
+                <h3>{{@Auth::user()->company->company_name}}</h3>
+            @endif
         </div>
         <p><b>Level of Care</b></p>
         <div class="header">

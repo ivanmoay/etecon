@@ -123,14 +123,25 @@
 </style>
 <body>
     <div class="main">
-        <div class="brand-container">
+        {{-- <div class="brand-container">
             <div class="flex-container">
                 <img src="https://i.ibb.co/kSr11h4/final.png" width="200" alt="final" border="0">
             </div>
-        </div>
-        <h1 style="text-align: end;">PHYSICIAN FACE-TO-FACE ENCOUNTER/ <br> RECERTIFICATION OF TERMINAL ILLNES <br> 60-DAY
-            PERIODS
-        </h1>
+        </div> --}}
+        <div style="display: flex; flex-direction: row; align-items: flex-start;">
+            <div style="display: flex; align-items: center">
+                @if (!empty(Auth::user()->company_id))
+                    <img src="{{ asset('/company_images/'.@Auth::user()->company->company_logo) }}" height="60" alt="final" border="0">&nbsp;
+                    <h3>{{@Auth::user()->company->company_name}}</h3>
+                @endif
+            </div>
+            <div class="heading" style="margin-left: auto">
+                <h1 style="text-align: end;">PHYSICIAN FACE-TO-FACE ENCOUNTER/ <br> RECERTIFICATION OF TERMINAL ILLNES <br> 60-DAY
+                    PERIODS
+                </h1>
+            </div>
+        </div> 
+        
         <div class="patient-info">
             <p>Patient Name: <input type="text"></p>
             <p style="border-left: 1px solid black;">&nbsp;ID#<input type="text"></p>

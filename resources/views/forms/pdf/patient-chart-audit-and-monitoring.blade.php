@@ -279,7 +279,16 @@
   </head>
   <body>
     <div class="container">
+      
       <div class="page">
+        <div style="display: flex; flex-direction: row; align-items: flex-start;">
+          <div style="display: flex; align-items: center">
+              @if (!empty(Auth::user()->company_id))
+                  <img src="{{ asset('/company_images/'.@Auth::user()->company->company_logo) }}" height="40" alt="final" border="0">&nbsp;
+                  <h3>{{@Auth::user()->company->company_name}}</h3>
+              @endif
+          </div>
+        </div>   
         <div class="text-center f-bold">PATIENT CHART AUDIT AND MONITORING</div>
         <br />
         <div>

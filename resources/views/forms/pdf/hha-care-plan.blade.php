@@ -90,11 +90,19 @@
 
 <body>
   <div class="container" style="padding: 30px 10px; margin-top: 1rem; margin-bottom: 1rem; border-radius: 25px;">
-    <div class="brand-container">
+    {{-- <div class="brand-container">
       <div class="flex-container">
         <img src="https://i.ibb.co/kSr11h4/final.png" width="200" alt="final" border="0">
       </div>
-    </div>
+    </div> --}}
+    <div style="display: flex; flex-direction: row; align-items: flex-start; margin-bottom: 1rem;">
+      <div style="display: flex; align-items: center">
+          @if (!empty(Auth::user()->company_id))
+              <img src="{{ asset('/company_images/'.@Auth::user()->company->company_logo) }}" height="60" alt="final" border="0">&nbsp;
+              <h3>{{@Auth::user()->company->company_name}}</h3>
+          @endif
+      </div>
+    </div>  
     <div class="flex" style="border-bottom: var(--border)">
       <h3 style="margin-right: 20px; margin-bottom: 8px">
         <input type="checkbox" />Hospice Aide

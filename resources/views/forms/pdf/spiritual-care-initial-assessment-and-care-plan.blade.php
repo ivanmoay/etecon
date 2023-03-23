@@ -319,13 +319,6 @@
             width: 65%;
         }
 
-
-
-
-
-
-
-
         .con-1st {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -413,10 +406,18 @@
 
 <body>
     <div class="main">
-        <div class="heading">
-            <h1>SPIRITUAL CARE ASSESSMENT/CARE PLAN</h1>
-            <h2>(ADDENDUM TO COMPREHENSIVE ASSESSMENT)</h2>
-        </div>
+        <div style="display: flex; flex-direction: row; align-items: flex-start;">
+            <div style="display: flex; align-items: center">
+                @if (!empty(Auth::user()->company_id))
+                    <img src="{{ asset('/company_images/'.@Auth::user()->company->company_logo) }}" height="60" alt="final" border="0">&nbsp;
+                    <h3>{{@Auth::user()->company->company_name}}</h3>
+                @endif
+            </div>
+            <div class="heading" style="margin-left: auto">
+                <h3>SPIRITUAL CARE ASSESSMENT/CARE PLAN</h3>
+                <h3>(ADDENDUM TO COMPREHENSIVE ASSESSMENT)</h3>
+            </div>
+        </div>        
 
         <!--!   Patient Information Form  -->
         <div class="form-container">

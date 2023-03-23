@@ -21,12 +21,12 @@
         .wrapper {
             display: flex;
             justify-content: center;
-            margin-top: 10vh;
+            /* margin-top: 10vh; */
             margin-left: 10vh;
             margin-right: 10vh;
             padding: 20px 0;
             border-radius: 25px;
-            background-color: rgba(255, 192, 203, 0.566);
+            /* background-color: rgba(255, 192, 203, 0.566); */
         }
         
         .container{
@@ -214,7 +214,7 @@
         .name,
         .name-1 {
             padding: 3px;
-            width: 250px;
+            width: 150px;
             height: 40px;
             border: 1px solid black;
             border-left: none;
@@ -382,14 +382,16 @@
 <body>
     <div class="wrapper">
         <div class="container">
-            <div class="flex-container">
-                <img src="https://i.ibb.co/KhC4SZT/my-dummy-logo.png" width="200" alt="my-dummy-logo" border="0">
-            </div>
-            <div class="flex-container brand-container">
-                <h1 class="text-primary inline-block relative mar-unset pad-unset text-1p8r b-n10">
-                    MY COMPANY NAME
-                </h1>
-            </div>
+
+            <div style="display: flex; flex-direction: row; align-items: flex-start;">
+                <div style="display: flex; align-items: center">
+                    @if (!empty(Auth::user()->company_id))
+                        <img src="{{ asset('/company_images/'.@Auth::user()->company->company_logo) }}" height="60" alt="final" border="0">&nbsp;
+                        <h3>{{@Auth::user()->company->company_name}}</h3>
+                    @endif
+                </div>
+            </div> 
+            
             <br>
             <br>
             <div class="content">
@@ -713,8 +715,8 @@
                 <div><b>Patient's Knowledge/Perception of Diagnosis and Prognosis:</b><input type="text"></div>
                 <div><br><input type="text"></div>
             </div>
-            <!-- page 2 -->
-            <div class="wrapper-1">
+            <!-- page 2 -->            
+            <div class="wrapper-1" style="margin-top: 100px;">
                 <div class="container">
                     <div class="content">
                         <div class="header">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-OTHER<html lang="en">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -386,15 +386,27 @@ OTHER<html lang="en">
 
 <body>
     <div class="A4">
-        <div class="flex-container">
+        {{-- <div class="flex-container">
             <img src="https://i.ibb.co/KhC4SZT/my-dummy-logo.png" width="200" alt="my-dummy-logo" border="0">
         </div>
         <div class="flex-container brand-container">
             <h1 class="text-primary inline-block relative mar-unset pad-unset text-1p8r b-n10">
                 MY COMPANY NAME
             </h1>
-        </div>
-        <div class="flex-container mar-t-3r">
+        </div> --}}
+        {{-- display: flex;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+            margin: 0 4.5rem; --}}
+        <div style="display: flex; flex-direction: row; align-items: flex-start; box-sizing: border-box; flex-wrap: wrap; margin: 0 4.5rem;">
+            <div style="display: flex; align-items: center; margin-top: 1rem">
+                @if (!empty(Auth::user()->company_id))
+                    <img src="{{ asset('/company_images/'.@Auth::user()->company->company_logo) }}" height="60" alt="final" border="0">&nbsp;
+                    <h3>{{@Auth::user()->company->company_name}}</h3>
+                @endif
+            </div>
+        </div> 
+        <div class="flex-container" style="margin-top: 1rem;">
             <div class="border-primary flex-300px pad-8x5 border-radius-5 bg-secondary">
                 <div class="flex align-start text-primary">
                     <div class="inline-block relative t-neg2p">
@@ -1485,9 +1497,9 @@ OTHER<html lang="en">
         </div>
     </div>
 
-    <div class="divider"></div>
+    {{-- <div class="divider"></div> --}}
 
-    <div class="A4">
+    {{-- <div class="A4">
         <div class="flex-container">
             <img src="https://i.ibb.co/KhC4SZT/my-dummy-logo.png" width="200" alt="my-dummy-logo" border="0">
         </div>
@@ -3112,7 +3124,7 @@ OTHER<html lang="en">
             </div>
 
         </div>
-    </div>
+    </div> --}}
 </body>
 
 </html>

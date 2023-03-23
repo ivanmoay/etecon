@@ -349,12 +349,29 @@ input.cus {
     <div class="main">
         <div class="brand-container flex">
             <div class="logo">
-                <img src="https://i.ibb.co/kSr11h4/final.png" width="150" alt="final" border="0">
+                <div style="display: flex; align-items: center">
+                    @if (!empty(Auth::user()->company_id))
+                        <img src="{{ asset('/company_images/'.@Auth::user()->company->company_logo) }}" height="60" alt="final" border="0">&nbsp;
+                        <h3>{{@Auth::user()->company->company_name}}</h3>
+                    @endif
+                </div>
             </div>
             <div class="title">
                 <h1>CLINICAL NOTE</h1>
             </div>
         </div>
+        {{-- <div style="display: flex; flex-direction: row; align-items: flex-start;">
+            <div style="display: flex; align-items: center">
+                @if (!empty(Auth::user()->company_id))
+                    <img src="{{ asset('/company_images/'.@Auth::user()->company->company_logo) }}" height="60" alt="final" border="0">&nbsp;
+                    <h3>{{@Auth::user()->company->company_name}}</h3>
+                @endif
+            </div>
+            <div class="heading" style="margin-left: auto">
+                <h1>CLINICAL NOTE</h1>
+            </div>
+        </div>         --}}
+
         <div class="form-container">
             <div class="info">
                 <div class="text-primary flex">

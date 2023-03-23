@@ -38,7 +38,7 @@
 
         body,
         html {
-            margin: 2rem 3rem;
+            margin: 1rem 3rem;
             font-family: 'Roboto', sans-serif;
             color: var(--text-color);
             height: 100%;
@@ -346,16 +346,28 @@
 </head>
 
 <body>
-    <div class="brand-container">
+    {{-- <div class="brand-container">
         <div class="flex-container">
             <img src="https://i.ibb.co/kSr11h4/final.png" width="200" alt="final" border="0">
         </div>
-    </div>
+    </div> --}}
     <div class="main">
-        <div class="title">
+        <div style="display: flex; flex-direction: row; align-items: flex-start;">
+            <div style="display: flex; align-items: center">
+                @if (!empty(Auth::user()->company_id))
+                    <img src="{{ asset('/company_images/'.@Auth::user()->company->company_logo) }}" height="60" alt="final" border="0">&nbsp;
+                    <h3>{{@Auth::user()->company->company_name}}</h3>
+                @endif
+            </div>
+            <div class="title" style="margin-left: auto">
+                <h1>BEREAVEMENT INITIAL ASSESSMENT/CARE PLAN</h1>
+                <h2>(ADDENDUM TO COMPREHENSIVE ASSESSMENT) Continued</h2>
+            </div>
+        </div>  
+        {{-- <div class="title">
             <h1>BEREAVEMENT INITIAL ASSESSMENT/CARE PLAN</h1>
             <h2>(ADDENDUM TO COMPREHENSIVE ASSESSMENT) Continued</h2>
-        </div>
+        </div> --}}
 
 
         <div class="form2-container">
