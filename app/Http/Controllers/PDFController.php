@@ -2,91 +2,129 @@
 
 namespace App\Http\Controllers;
 
+use Dompdf\Dompdf;
+use App\Models\Form;
 use App\Models\UserForm;
+
+// reference the Dompdf namespace
 use Illuminate\Http\Request;
 use Elibyy\TCPDF\Facades\TCPDF;
 
-// reference the Dompdf namespace
-use Dompdf\Dompdf;
-
 class PDFController extends Controller
 {
-    public function encode_form(UserForm $userForm)
+    public function encode_form(Form $form)
     {
-        if($userForm->form->slug == 'spiritual-care-initial-assessment-and-care-plan'){
+        if($form->slug == 'spiritual-care-initial-assessment-and-care-plan'){
             // return view('forms.encode.spiritual-care-initial-assessment-and-care-plan', [
             //     'userForm' => $userForm
             // ]);
             return view('forms.pdf.spiritual-care-initial-assessment-and-care-plan');
         }
-        if($userForm->form->slug == 'hospice-homehealth-aide-charting'){
+        if($form->slug == 'hospice-homehealth-aide-charting'){
             // return view('forms.encode.hospice-homehealth-aide-charting', [
             //     'userForm' => $userForm
             // ]);
             return view('forms.pdf.hospice-homehealth-aide-charting');
         }        
         
-        if($userForm->form->slug == 'patient-chart-audit-and-monitoring'){
+        if($form->slug == 'patient-chart-audit-and-monitoring'){
             return view('forms.pdf.patient-chart-audit-and-monitoring');
         } 
-        if($userForm->form->slug == 'hospice-nursing-visit-note'){
+        if($form->slug == 'hospice-nursing-visit-note'){
             return view('forms.pdf.hospice-nursing-visit-note');
         } 
-        if($userForm->form->slug == 'hospice-revocation-form'){
+        if($form->slug == 'hospice-revocation-form'){
             return view('forms.pdf.hospice-revocation-form');
         } 
-        if($userForm->form->slug == 'hospice-clinical-review'){
+        if($form->slug == 'hospice-clinical-review'){
             return view('forms.pdf.hospice-clinical-review');
         } 
-        if($userForm->form->slug == 'homemaker-companion-022-tc'){
+        if($form->slug == 'homemaker-companion-022-tc'){
             return view('forms.pdf.homemaker-companion-022-tc');
         } 
-        if($userForm->form->slug == 'hha-weekly-report'){
+        if($form->slug == 'hha-weekly-report'){
             return view('forms.pdf.hha-weekly-report');
         } 
-        if($userForm->form->slug == 'hha-progress-notes'){
+        if($form->slug == 'hha-progress-notes'){
             return view('forms.pdf.hha-progress-notes');
         }  
-        if($userForm->form->slug == 'hha-care-plan'){
+        if($form->slug == 'hha-care-plan'){
             return view('forms.pdf.hha-care-plan');
         }   
-        if($userForm->form->slug == 'spiritual-care-clinical-note'){
+        if($form->slug == 'spiritual-care-clinical-note'){
             return view('forms.pdf.spiritual-care-clinical-note');
         }   
-        if($userForm->form->slug == 'skilled-nursing-clinical-note'){
+        if($form->slug == 'skilled-nursing-clinical-note'){
             return view('forms.pdf.skilled-nursing-clinical-note');
         }   
-        if($userForm->form->slug == 'hospice-physician-face-to-face-and-recertification-60-days'){
+        if($form->slug == 'hospice-physician-face-to-face-and-recertification-60-days'){
             return view('forms.pdf.hospice-physician-face-to-face-and-recertification-60-days');
         }      
-        if($userForm->form->slug == 'hospice-interdiciplinary-care-plan'){
+        if($form->slug == 'hospice-interdiciplinary-care-plan'){
             return view('forms.pdf.hospice-interdiciplinary-care-plan');
         }
-        if($userForm->form->slug == 'hospice-initial-order-form'){
+        if($form->slug == 'hospice-initial-order-form'){
             return view('forms.pdf.hospice-initial-order-form');
         }
-        if($userForm->form->slug == 'hospice-bereavement-initial-and-care-plan'){
+        if($form->slug == 'hospice-bereavement-initial-and-care-plan'){
             return view('forms.pdf.hospice-bereavement-initial-and-care-plan');
         }
-        if($userForm->form->slug == 'hospice-initial-order-form'){
+        if($form->slug == 'hospice-initial-order-form'){
             return view('forms.pdf.hospice-initial-order-form');
         }
-        if($userForm->form->slug == 'hospice-social-worker-initial-assessment-form'){
+        if($form->slug == 'hospice-social-worker-initial-assessment-form'){
             return view('forms.pdf.hospice-social-worker-initial-assessment-form');
         }
+        if($form->slug == 'hospice-rn-recertification'){
+            return view('forms.pdf.hospice-rn-recertification');
+        }
+        if($form->slug == 'hospice-volunteer-initial-assessment-and-care-plan'){
+            return view('forms.pdf.hospice-volunteer-initial-assessment-and-care-plan');
+        }
+        if($form->slug == 'hospice-spiritual-care-clinical-note'){
+            return view('forms.pdf.hospice-spiritual-care-clinical-note');
+        }
+        if($form->slug == 'hospice-md-initial-recertification-order'){
+            return view('forms.pdf.hospice-md-initial-recertification-order');
+        } 
+        if($form->slug == 'hospice-sw-clinical-notes'){
+            return view('forms.pdf.hospice-sw-clinical-notes');
+        }  
+        if($form->slug == 'hospice-social-worker-clinical-note'){
+            return view('forms.pdf.hospice-social-worker-clinical-note');
+        }  
+        if($form->slug == 'hospice-physician-certification-initial-and-second-bp-90-days'){
+            return view('forms.pdf.hospice-physician-certification-initial-and-second-bp-90-days');
+        }  
+        if($form->slug == 'hospice-patient-information-sheet'){
+            return view('forms.pdf.hospice-patient-information-sheet');
+        }  
+        if($form->slug == 'hospice-patient-emergency-preparedness-plan-form'){
+            return view('forms.pdf.hospice-patient-emergency-preparedness-plan-form');
+        }  
+        if($form->slug == 'hospice-initial-comprehensive-nursing-assessment'){
+            return view('forms.pdf.hospice-initial-comprehensive-nursing-assessment');
+        } 
+        if($form->slug == 'hospice-discharge-and-transfer-summary'){
+            return view('forms.pdf.hospice-discharge-and-transfer-summary');
+        }
+        if($form->slug == 'hospice-narcotics-disposal-form'){
+            return view('forms.pdf.hospice-narcotics-disposal-form');
+        }    
+        
     }
 
     public function print_form(Request $request, UserForm $userForm)
     {
-        // if($userForm->form->slug == 'spiritual-care-initial-assessment-and-care-plan'){
+        // if($form->slug == 'spiritual-care-initial-assessment-and-care-plan'){
         //     //dd($request);
         //     //$data = $request;
-        //     //$this->generate_pdf($data, $userForm->form->slug);
+        //     //$this->generate_pdf($data, $form->slug);
         //     return view('forms.pdf.spiritual-care-initial-assessment-and-care-plan', [
         //         'data' => $request
         //     ]);
         // }
-        // if($userForm->form->slug == 'hospice-homehealth-aide-charting'){
+        // if($form->slug == 'hospice-homehealth-aide-charting'){
         //     return view('forms.pdf.hospice-homehealth-aide-charting', [
         //         'data' => $request
         //     ]);

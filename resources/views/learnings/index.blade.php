@@ -4,7 +4,7 @@
           <div class="card my-4">
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">                
               <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                <h6 class="text-white text-capitalize ps-3">User Forms</h6>
+                <h6 class="text-white text-capitalize ps-3">Learnings</h6>
               </div>
             </div>            
             <div class="card-body px-0 pb-2">
@@ -12,22 +12,22 @@
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Form Name</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Course</th>
                     </tr>
                   </thead>
                   <tbody>
-                    @unless (count($user_forms) == 0)
-                    @foreach ($user_forms as $user_form)
+                    @unless (count($courses) == 0)
+                    @foreach ($courses as $course)
                         <tr>                        
                             <td>
-                                <p class="text-m font-weight-bold mb-0"><a href="/encode_form/{{$user_form->form->id}}" target="_blank">{{$user_form->form->form_name}} {{empty($user_form->form->category->category) ? '' : '- '.$user_form->form->category->category}}</a></p>
+                                <p class="text-m font-weight-bold mb-0"><a href="/learnings/{{$course->id}}" target="">{{$course->course}} - {{$course->description}}</a></p>
                             </td>
                         </tr>
                     @endforeach     
                     @else 
                         <tr>                        
                             <td colspan="2">
-                                <p class="text-xs font-weight-bold mb-0">No form associated to this user.</p>
+                                <p class="text-xs font-weight-bold mb-0">No learnings available.</p>
                             </td>
                         </tr>        
                     @endunless       

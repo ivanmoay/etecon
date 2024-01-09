@@ -271,7 +271,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td>
@@ -288,7 +290,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td>Assist Bath-Chair</td>
@@ -301,7 +305,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td>Shampoo Hair</td>
@@ -314,7 +320,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td>Comb Hair</td>
@@ -327,7 +335,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td>Mouth Care</td>
@@ -340,7 +350,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td>
@@ -357,7 +369,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td colspan="5">HAND / FOOT CARE</td>
@@ -376,7 +390,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td colspan="5">ELIMINATION</td>
@@ -392,7 +408,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td>External Cath Care</td>
@@ -405,7 +423,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td>Measure Cath Output</td>
@@ -418,7 +438,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td>Empty Drainage Bag</td>
@@ -431,7 +453,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
           </tbody>
         </table>
@@ -470,7 +494,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td colspan="5">ACTIVITY</td>
@@ -489,7 +515,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td>
@@ -506,7 +534,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td>
@@ -522,7 +552,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td>
@@ -538,7 +570,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td>
@@ -556,7 +590,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td>Reposition Patient</td>
@@ -569,7 +605,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td>Others:</td>
@@ -582,7 +620,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td colspan="5">MEALS</td>
@@ -598,7 +638,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td>Feed</td>
@@ -611,7 +653,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td>Setup</td>
@@ -624,7 +668,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td>Offer Oral Supplement</td>
@@ -637,7 +683,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td colspan="5">HOUSEKEEPING</td>
@@ -653,7 +701,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td>Make Bed</td>
@@ -666,7 +716,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td>Straighten Room</td>
@@ -679,7 +731,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td>Laundry</td>
@@ -692,7 +746,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
             <tr>
               <td>Shopping</td>
@@ -705,7 +761,9 @@
               <td style="text-align: center">
                 <input type="checkbox" />
               </td>
-              <td></td>
+              <td>
+                <input type="text" style="border-bottom: 0px">
+              </td>
             </tr>
           </tbody>
         </table>
@@ -868,7 +926,7 @@
       <div class="flex">
         <div style="width: 50%; padding-right: 2px">
           <p style="font-weight: bold; margin-bottom: 8px">
-            parameters/Special Conditions to report to RN/Therapist:
+            Parameters/Special Conditions to report to RN/Therapist:
           </p>
           <p>
             New Skin or Wound Breakdown, No BM in 3 days, Change in ability to
@@ -924,6 +982,84 @@
       </div>
     </div>
   </div>
+
+  <div class="floating-buttons">
+    <button onclick="openPrintPreview()">Print Preview</button>
+    <button onclick="saveAsPDF()">Save as PDF</button>
+    <button onclick="saveAndEmail()">Save and Email</button>
+  </div>
+
 </body>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100vh;
+  }
+
+  .floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+  }
+
+  .floating-buttons button {
+    margin-top: 10px;
+    display: block;
+  }
+
+  @media print {
+    .floating-buttons {
+      display: none;
+    }
+  }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"></script>
+<script>
+function openPrintPreview() {
+  window.print();
+}
+
+function saveAsPDF() {
+  // var element = document.body;
+
+  //   html2pdf(element, {
+  //     margin: 10,
+  //     filename: 'document.pdf',
+  //     image: { type: 'jpeg', quality: 1 },
+  //     // html2canvas: { scale: 1 },
+  //     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+  //   });
+  var doc = document.body;
+
+    //Wait until PDF is ready to print    
+    if (typeof doc.print === 'undefined') {    
+        setTimeout(function(){printDocument(documentId);}, 1000);
+    } else {
+        doc.print();
+    }
+}
+
+function saveAndEmail() {
+  var element = document.body; // Choose the element you want to save as PDF
+
+  html2pdf(element, {
+    margin: 10,
+    filename: 'document.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+  }).then(function(pdf) {
+    // Convert the PDF to a data URL
+    var dataUrl = pdf.output('dataurlstring');
+
+    // Open the user's default email client with a prepopulated email
+    window.location.href = 'mailto:recipient@example.com?subject=Document&body=Please find attached document.&attachment=' + encodeURIComponent(dataUrl);
+  });
+}
+</script>
 
 </html>

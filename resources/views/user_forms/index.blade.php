@@ -37,6 +37,7 @@
                   <thead>
                     <tr>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Form Name</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Category</th>
                       <th colspan="2" class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7 ps-2"></th>
                     </tr>
                   </thead>
@@ -47,6 +48,9 @@
                             <td>
                                 <p class="text-xs font-weight-bold mb-0">{{$user_form->form->form_name}}</p>
                             </td>
+                            <td>
+                              <p class="text-xs font-weight-bold mb-0">{{$user_form->form->category->category ?? 'none'}}</p>
+                          </td>
                             <td class="ms-auto text-start"> 
                                 <form method="POST" action="/user_forms/{{$user_form->id}}">
                                     @csrf

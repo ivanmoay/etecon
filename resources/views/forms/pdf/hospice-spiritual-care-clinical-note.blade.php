@@ -595,7 +595,9 @@
     <div class="main">
         <div class="brand-container">
             <div class="flex-container">
-                <img src="https://i.ibb.co/kSr11h4/final.png" width="200" alt="final" border="0">
+                @if (!empty(Auth::user()->company_id))
+                    <img src="{{ asset('/company_images/'.@Auth::user()->company->company_logo) }}" width="200" alt="final" border="0">
+                @endif
             </div>
             <div class="heading">
                 <h1>SPIRITUAL CARE <br> Clinical Note</h1>

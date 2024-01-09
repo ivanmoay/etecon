@@ -206,7 +206,7 @@
         </div>
         <div class="title b-bot bg-primary">
             <div class="choices-heading">
-                <h2><input type="checkbox"> ADMINSSION</h2>
+                <h2><input type="checkbox"> ADMISSION</h2>
                 <h2><input type="checkbox"> RECERTIFICATION</h2>
             </div>
             <h1 class="heading">CLINICAL REVIEW FOR SUPPORT OF <br> HOSPICE ELIGIBILITY</h1>

@@ -5,13 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospice-IDG</title>
+    <title>Hospice IDG Form</title>
     <style>
         body {
             font-family: sans-serif;
             font-size: 14px;
         }
-
 
         .A4 {
             width: 1240px;
@@ -24,7 +23,7 @@
         }
 
         .absolute {
-            position: absolute
+            position: absolute;
         }
 
         .align-end {
@@ -36,7 +35,7 @@
         }
 
         .b-n10 {
-            bottom: -10px
+            bottom: -10px;
         }
 
         .bg-img-primary {
@@ -44,7 +43,7 @@
         }
 
         .bg-primary {
-            background: rgba(87, 92, 59, 255)
+            background: rgba(87, 92, 59, 255);
         }
 
         .bg-secondary {
@@ -52,7 +51,7 @@
         }
 
         .bg-white {
-            background: white
+            background: white;
         }
 
         .border-radius-5 {
@@ -60,7 +59,7 @@
         }
 
         .border-radius-15 {
-            border-radius: 15px
+            border-radius: 15px;
         }
 
         .border-primary {
@@ -91,7 +90,7 @@
         }
 
         .flex-grow {
-            flex-grow: 1
+            flex-grow: 1;
         }
 
         .flex-10 {
@@ -103,7 +102,7 @@
         }
 
         .flex-30 {
-            flex: 0 0 30%
+            flex: 0 0 30%;
         }
 
         .flex-34 {
@@ -119,11 +118,11 @@
         }
 
         .h-100 {
-            height: 100%
+            height: 100%;
         }
 
         .inline {
-            display: inline
+            display: inline;
         }
 
         .inline-block {
@@ -135,11 +134,11 @@
         }
 
         .l-0p5r {
-            left: 0.5rem
+            left: 0.5rem;
         }
 
         .line-height-25 {
-            line-height: 25px
+            line-height: 25px;
         }
 
         .mar-l-5 {
@@ -151,7 +150,7 @@
         }
 
         .mar-t-1r {
-            margin-top: 1rem
+            margin-top: 1rem;
         }
 
         .mar-t-3r {
@@ -163,15 +162,15 @@
         }
 
         .mar-unset {
-            margin: unset
+            margin: unset;
         }
 
         .pad-5 {
-            padding: 5px
+            padding: 5px;
         }
 
         .pad-b-5 {
-            padding-bottom: 5px
+            padding-bottom: 5px;
         }
 
         .pad-b-20 {
@@ -179,11 +178,11 @@
         }
 
         .pad-t-10 {
-            padding-top: 10px
+            padding-top: 10px;
         }
 
         .pad-unset {
-            padding: unset
+            padding: unset;
         }
 
         .pad-0x10 {
@@ -199,11 +198,11 @@
         }
 
         .pad-3x10 {
-            padding: 3px 10px
+            padding: 3px 10px;
         }
 
         .pad-5x0 {
-            padding: 5px 0
+            padding: 5px 0;
         }
 
         .pad-8x5 {
@@ -223,7 +222,7 @@
         }
 
         .t-neg10 {
-            top: -10px
+            top: -10px;
         }
 
         .t-neg20 {
@@ -239,7 +238,7 @@
         }
 
         .text-secondary {
-            color: rgba(121, 104, 116, 255)
+            color: rgba(121, 104, 116, 255);
         }
 
         .text-white {
@@ -263,7 +262,7 @@
         }
 
         .w-90 {
-            width: 90px
+            width: 90px;
         }
 
         .w-100 {
@@ -271,15 +270,15 @@
         }
 
         .w-50px {
-            width: 50px
+            width: 50px;
         }
 
         .w-80px {
-            width: 80px
+            width: 80px;
         }
 
         .w-160px {
-            width: 160px
+            width: 160px;
         }
 
         .w-240px {
@@ -287,7 +286,7 @@
         }
 
         .divider {
-            height: 165rem;
+            height: 8rem;
             width: 100%;
         }
 
@@ -324,7 +323,7 @@
 
         .other-container-1 {
             display: grid;
-            grid-template-columns: 1.3fr .8fr;
+            grid-template-columns: 1.3fr 0.8fr;
             width: 100%;
         }
 
@@ -368,45 +367,41 @@
 
         input[type='text'] {
             background-color: transparent;
-            /* background-color: red; */
             outline: 0;
             border: none;
             width: 100%;
             font-size: 14px;
             border-bottom: 1px solid black;
         }
+
         input.borbot-none {
             border-bottom: none;
             margin-bottom: 2px;
             padding-top: 0;
             margin-top: 0;
         }
+
+        @media print {
+            @page {
+                margin: 0;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="A4">
-        {{-- <div class="flex-container">
-            <img src="https://i.ibb.co/KhC4SZT/my-dummy-logo.png" width="200" alt="my-dummy-logo" border="0">
+        <div class="flex-container">
+            @if (!empty(Auth::user()->company_id))
+              <img src="{{ asset('/company_images/'.@Auth::user()->company->company_logo) }}" width="200" alt="my-dummy-logo" border="0">
+            @endif
         </div>
         <div class="flex-container brand-container">
             <h1 class="text-primary inline-block relative mar-unset pad-unset text-1p8r b-n10">
-                MY COMPANY NAME
+                {{@Auth::user()->company->company_name}}
             </h1>
-        </div> --}}
-        {{-- display: flex;
-            box-sizing: border-box;
-            flex-wrap: wrap;
-            margin: 0 4.5rem; --}}
-        <div style="display: flex; flex-direction: row; align-items: flex-start; box-sizing: border-box; flex-wrap: wrap; margin: 0 4.5rem;">
-            <div style="display: flex; align-items: center; margin-top: 1rem">
-                @if (!empty(Auth::user()->company_id))
-                    <img src="{{ asset('/company_images/'.@Auth::user()->company->company_logo) }}" height="60" alt="final" border="0">&nbsp;
-                    <h3>{{@Auth::user()->company->company_name}}</h3>
-                @endif
-            </div>
-        </div> 
-        <div class="flex-container" style="margin-top: 1rem;">
+        </div>
+        <div class="flex-container mar-t-3r">
             <div class="border-primary flex-300px pad-8x5 border-radius-5 bg-secondary">
                 <div class="flex align-start text-primary">
                     <div class="inline-block relative t-neg2p">
@@ -430,16 +425,16 @@
 
         <div class="flex-container border-primary-top mar-t-1r bg-img-primary">
             <div class="border-primary-right text-primary flex-65 pad-2x10">
-            Patient Name (First, MI, Last)
-                <input type="text">
+                Patient Name (First, MI, Last)
+                <input type="text" class="borbot-none">
             </div>
             <div class="border-primary-right text-primary pad-2x10 flex-15">
                 ID#
-                <input type="text">
+                <input type="text" class="borbot-none">
             </div>
             <div class="text-primary pad-2x10 flex-10">
                 SOC Date
-                <input type="text">
+                <input type="text" class="borbot-none">
             </div>
         </div>
 
@@ -469,7 +464,7 @@
             </div>
             <div class="text-primary flex-grow pad-2x10">
                 Patient's/CareGiver's Goal:
-                <input type="text">
+                <input type="text" class="borbot-none">
             </div>
         </div>
 
@@ -479,7 +474,7 @@
             </div>
         </div>
 
-        <div class="flex-container">
+        <div class="flex-container bg-img-primary">
             <div class="flex-grow">
                 <h3 class="text-primary pad-5x0 mar-unset">Goals/Outcomes:</h3>
                 <div class="text-primary pad-0x10">
@@ -487,7 +482,7 @@
                     to patient's death
                 </div>
                 <div class="text-primary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
 
                 <h3 class="inline-block text-secondary pad-5x0 mar-unset">
@@ -557,7 +552,7 @@
                     </div>
                 </div>
                 <div class="text-secondary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
 
 
@@ -605,13 +600,16 @@
             </div>
         </div>
 
+
+
         <div class="flex-container border-primary-top mar-t-1r bg-img-primary">
             <h3 class="text-primary mar-unset pad-5 w-100">
-                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
+                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input
+                    type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
             </h3>
         </div>
 
-        <div class="flex-container">
+        <div class="flex-container bg-img-primary">
             <div class="bg-primary text-white pad-3x10 w-100 border-radius-15">
                 <h3 class="inline">ANTICIPATORY GRIEF AND BEREAVEMENT</h3>
             </div>
@@ -622,7 +620,7 @@
                     death
                 </div>
                 <div class="text-primary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
                 <h3 class="inline-block text-secondary pad-5x0 mar-unset">
                     Interventions:
@@ -666,7 +664,7 @@
                     </div>
                 </div>
                 <div class="text-secondary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
             </div>
             <div class="relative text-secondary flex-30 pad-t-10">
@@ -685,28 +683,30 @@
         </div>
         <div class="flex-container border-primary-top mar-t-1r bg-img-primary">
             <h3 class="text-primary mar-unset pad-5 w-100">
-                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
+                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input
+                    type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
             </h3>
         </div>
 
 
 
 
-        <div class="flex-container">
+        <div class="flex-container bg-img-primary">
             <div class="bg-primary text-white pad-3x10 w-100 border-radius-15">
                 <h3 class="inline">VOLUNTEER SERVICES</h3>
             </div>
             <div class="flex-grow">
                 <h3 class="text-primary pad-5x0 mar-unset">Goals/Outcomes:</h3>
                 <div class="text-primary pad-0x10">
-                    <input type="checkbox"> Patient/Caregiver will receive requested volunteer services within <input type="text" style="width: 30px;" >
+                    <input type="checkbox"> Patient/Caregiver will receive requested volunteer services within <input
+                        type="text" style="width: 30px;">
                     days of request
                 </div>
                 <div class="text-primary pad-0x10">
                     <input type="checkbox"> Caregiver will receive sufficient rest during patient's terminal illness
                 </div>
                 <div class="text-primary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
                 <h3 class="inline-block text-secondary pad-5x0 mar-unset">
                     Volunteer Interventions:
@@ -738,7 +738,7 @@
                 </div>
 
                 <div class="text-primary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
                 <h3 class="inline-block text-secondary pad-5x0 mar-unset">
                     Caregiver Relief Interventions:
@@ -773,7 +773,7 @@
                     </div>
                 </div>
                 <div class="text-secondary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
             </div>
             <div class="relative text-secondary flex-30 pad-t-10">
@@ -800,11 +800,12 @@
 
         <div class="flex-container border-primary-top mar-t-1r bg-img-primary">
             <h3 class="text-primary mar-unset pad-5 w-100">
-                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
+                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input
+                    type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
             </h3>
         </div>
 
-        <div class="flex-container">
+        <div class="flex-container bg-img-primary">
             <div class="bg-primary text-white pad-3x10 w-100 border-radius-15">
                 <h3 class="inline">NEUROLOGICAL STATUS</h3>
             </div>
@@ -818,7 +819,7 @@
                     <input type="checkbox"> Patient will remain safe from injury during seizure activity
                 </div>
                 <div class="text-primary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
                 <h3 class="inline-block text-secondary pad-5x0 mar-unset">
                     Neurological Interventions:
@@ -867,7 +868,7 @@
                     </div>
                 </div>
                 <div class="text-secondary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
             </div>
 
@@ -885,14 +886,15 @@
         </div>
         <div class="flex-container border-primary-top mar-t-1r bg-img-primary">
             <h3 class="text-primary mar-unset pad-5 w-100">
-                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
+                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input
+                    type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
             </h3>
         </div>
 
 
 
 
-        <div class="flex-container">
+        <div class="flex-container bg-img-primary">
             <div class="bg-primary text-white pad-3x10 w-100 border-radius-15">
                 <h3 class="inline">MUSCULOSKELETAL STATUS</h3>
             </div>
@@ -938,7 +940,7 @@
                     </div>
                 </div>
                 <div class="text-secondary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
             </div>
             <div class="relative text-secondary flex-30 pad-t-10">
@@ -955,11 +957,12 @@
         </div>
         <div class="flex-container border-primary-top mar-t-1r bg-img-primary">
             <h3 class="text-primary mar-unset pad-5 w-100">
-                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
+                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input
+                    type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
             </h3>
         </div>
 
-        <div class="flex-container">
+        <div class="flex-container bg-img-primary">
             <div class="bg-primary text-white pad-3x10 w-100 border-radius-15">
                 <h3 class="inline">MUSCULOSKELETAL STATUS (continued)</h3>
             </div>
@@ -995,7 +998,7 @@
                     </div>
                 </div>
                 <div class="text-secondary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
                 <h3 class="inline-block text-secondary pad-5x0 mar-unset">
                     Fall Interventions:
@@ -1017,7 +1020,7 @@
                     </div>
                 </div>
                 <div class="text-secondary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
             </div>
             <div class="relative text-secondary flex-30 pad-t-10">
@@ -1033,11 +1036,12 @@
         </div>
         <div class="flex-container border-primary-top mar-t-1r bg-img-primary">
             <h3 class="text-primary mar-unset pad-5 w-100">
-                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
+                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input
+                    type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
             </h3>
         </div>
 
-        <div class="flex-container">
+        <div class="flex-container bg-img-primary">
             <div class="bg-primary text-white pad-3x10 w-100 border-radius-15">
                 <h3 class="inline">PAIN STATUS</h3>
             </div>
@@ -1053,7 +1057,7 @@
                     term basis
                 </div>
                 <div class="text-primary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
                 <h3 class="inline-block text-secondary pad-5x0 mar-unset">
                     Pain Interventions:
@@ -1095,7 +1099,7 @@
                     </div>
                 </div>
                 <div class="text-secondary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
                 <h3 class="inline-block text-secondary pad-5x0 mar-unset">
                     General Inpatient Care Interventions:
@@ -1125,7 +1129,7 @@
                     </div>
                 </div>
                 <div class="text-secondary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
             </div>
             <div class="relative text-secondary flex-30 pad-t-10">
@@ -1148,11 +1152,12 @@
         </div>
         <div class="flex-container border-primary-top mar-t-1r bg-img-primary">
             <h3 class="text-primary mar-unset pad-5 w-100">
-                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
+                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input
+                    type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
             </h3>
         </div>
 
-        <div class="flex-container">
+        <div class="flex-container bg-img-primary">
             <div class="bg-primary text-white pad-3x10 w-100 border-radius-15">
                 <h3 class="inline">INTEGUMENTARY STATUS</h3>
             </div>
@@ -1164,7 +1169,7 @@
                     <input type="checkbox"> within <input type="text" style="width: 30px;"> period of time
                 </div>
                 <div class="text-primary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
                 <h3 class="inline-block text-secondary pad-5x0 mar-unset">
                     Integumentary Interventions:
@@ -1254,7 +1259,7 @@
                 </div>
 
                 <div class="text-secondary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
                 <div class="text-secondary pad-0x10">
                     <div class="inline-block">
@@ -1265,7 +1270,7 @@
 
 
                 <div class="text-secondary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
             </div>
             <div class="relative text-secondary flex-30 pad-t-10">
@@ -1288,13 +1293,14 @@
         </div>
         <div class="flex-container border-primary-top mar-t-1r bg-img-primary">
             <h3 class="text-primary mar-unset pad-5 w-100">
-                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
+                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input
+                    type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
             </h3>
         </div>
 
 
 
-        <div class="flex-container">
+        <div class="flex-container bg-img-primary">
             <div class="bg-primary text-white pad-3x10 w-100 border-radius-15">
                 <h3 class="inline">CARDIO/RESPIRATORY STATUS</h3>
             </div>
@@ -1347,10 +1353,12 @@
                         <input type="checkbox"> <strong><em>Instruct:</em></strong>
                     </div>
                     <div class="inline-block">
-                        Proper and safe use of O<sub>2</sub> administration at <input type="text" style="width: 20px;"> liters/min
+                        Proper and safe use of O<sub>2</sub> administration at <input type="text" style="width: 20px;">
+                        liters/min
                     </div>
                     <div class="text-secondary pad-0x20">
-                        via <input type="text" style="width: 20%;">. Hours of use <input type="text" style="width: 30px;">
+                        via <input type="text" style="width: 20%;">. Hours of use <input type="text"
+                            style="width: 30px;">
                     </div>
                 </div>
 
@@ -1424,7 +1432,7 @@
 
 
                 <div class="text-secondary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
                 <h3 class="inline-block text-secondary pad-5x0 mar-unset">
                     Cardiovascular Interventions:
@@ -1464,7 +1472,7 @@
                 </div>
 
                 <div class="text-secondary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
             </div>
             <div class="relative text-secondary flex-30 pad-t-10">
@@ -1492,20 +1500,23 @@
         </div>
         <div class="flex-container border-primary-top mar-t-1r bg-img-primary">
             <h3 class="text-primary mar-unset pad-5 w-100">
-                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
+                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input
+                    type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
             </h3>
         </div>
     </div>
 
-    {{-- <div class="divider"></div> --}}
+    <div class="divider"></div>
 
-    {{-- <div class="A4">
+    <div class="A4">
         <div class="flex-container">
-            <img src="https://i.ibb.co/KhC4SZT/my-dummy-logo.png" width="200" alt="my-dummy-logo" border="0">
+            @if (!empty(Auth::user()->company_id))
+                <img src="{{ asset('/company_images/'.@Auth::user()->company->company_logo) }}" width="200" alt="my-dummy-logo" border="0">
+            @endif
         </div>
         <div class="flex-container brand-container">
             <h1 class="text-primary inline-block relative mar-unset pad-unset text-1p8r b-n10">
-                MY COMPANY NAME
+                {{@Auth::user()->company->company_name}}
             </h1>
         </div>
         <div class="flex-container mar-t-3r">
@@ -1540,7 +1551,7 @@
             </div>
         </div>
 
-        <div class="flex-container">
+        <div class="flex-container bg-img-primary">
             <div class="flex-grow">
                 <h3 class="text-primary pad-5x0 mar-unset">Goals/Outcomes:</h3>
                 <div class="text-primary pad-0x10">
@@ -1549,7 +1560,7 @@
                     <input type="checkbox"> within <input type="text" style="width: 35px;"> period of time
                 </div>
                 <div class="text-primary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
 
                 <h3 class="inline-block text-secondary pad-5x0 mar-unset">
@@ -1605,7 +1616,8 @@
                         <input type="checkbox"> <strong><em>Instruct:</em></strong>
                     </div>
                     <div class="inline-block">
-                        Foley catheter <input type="text" style="width: 50px;"> Fr <input type="text" style="width: 50px;"> mL balloon
+                        Foley catheter <input type="text" style="width: 50px;"> Fr <input type="text"
+                            style="width: 50px;"> mL balloon
                     </div>
                 </div>
 
@@ -1635,7 +1647,8 @@
                         <input type="checkbox"> <strong><em>Instruct:</em></strong>
                     </div>
                     <div class="inline-block">
-                        Solution <input type="text" style="width: 35px;"> mL <input type="text" style="width: 30px;"> frequency <input type="text" style="width: 30px;">
+                        Solution <input type="text" style="width: 35px;"> mL <input type="text" style="width: 30px;">
+                        frequency <input type="text" style="width: 30px;">
                     </div>
                 </div>
 
@@ -1680,7 +1693,8 @@
                         <input type="checkbox"> <strong><em>Instruct:</em></strong>
                     </div>
                     <div class="inline-block">
-                        Catheter change q <input type="text" style="width: 50px;"> with <input type="text" style="width: 50px;">
+                        Catheter change q <input type="text" style="width: 50px;"> with <input type="text"
+                            style="width: 50px;">
                     </div>
                     <div class="text-secondary pad-0x20">
                         Fr <input type="text" style="width: 50px;"> mL balloon catheter
@@ -1688,7 +1702,7 @@
                 </div>
 
                 <div class="text-secondary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
 
             </div>
@@ -1716,11 +1730,12 @@
 
         <div class="flex-container border-primary-top mar-t-1r bg-img-primary">
             <h3 class="text-primary mar-unset pad-5 w-100">
-                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
+                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input
+                    type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
             </h3>
         </div>
 
-        <div class="flex-container">
+        <div class="flex-container bg-img-primary">
             <div class="bg-primary text-white pad-3x10 w-100 border-radius-15">
                 <h3 class="inline">ENDOCRINE STATUS</h3>
             </div>
@@ -1855,21 +1870,23 @@
         </div>
         <div class="flex-container border-primary-top mar-t-1r bg-img-primary">
             <h3 class="text-primary mar-unset pad-5 w-100">
-                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
+                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input
+                    type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
             </h3>
         </div>
 
 
 
 
-        <div class="flex-container">
+        <div class="flex-container bg-img-primary">
             <div class="bg-primary text-white pad-3x10 w-100 border-radius-15">
                 <h3 class="inline">GASTROINTESTINAR STATUS</h3>
             </div>
             <div class="flex-grow">
                 <h3 class="text-primary pad-5x0 mar-unset">Goals/Outcomes:</h3>
                 <div class="text-primary pad-0x10">
-                    <input type="checkbox"> Patient's nausea/vomiting will be controlled within <input type="text" style="width: 35px;"> period of time
+                    <input type="checkbox"> Patient's nausea/vomiting will be controlled within <input type="text"
+                        style="width: 35px;"> period of time
                 </div>
                 <div class="text-primary pad-0x10">
                     <input type="checkbox"> Optimal nutrition/hydration will be achieved based on patient conditions
@@ -2049,7 +2066,7 @@
                 </div>
 
                 <div class="text-secondary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
                 <h3 class="inline-block text-secondary pad-5x0 mar-unset">
                     Bowel Interventions:
@@ -2187,7 +2204,7 @@
                 </div>
 
                 <div class="text-secondary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
 
 
@@ -2234,7 +2251,7 @@
                 </div>
 
                 <div class="text-secondary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
             </div>
 
@@ -2287,11 +2304,12 @@
 
         <div class="flex-container border-primary-top mar-t-1r bg-img-primary">
             <h3 class="text-primary mar-unset pad-5 w-100">
-                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
+                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input
+                    type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
             </h3>
         </div>
 
-        <div class="flex-container">
+        <div class="flex-container bg-img-primary">
             <div class="bg-primary text-white pad-3x10 w-100 border-radius-15">
                 <h3 class="inline">PYSCHOLOGICAL/MENTAL/EMOTIONAL STATUS</h3>
             </div>
@@ -2421,7 +2439,7 @@
                 </div>
 
                 <div class="text-secondary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
 
                 <h3 class="inline-block text-secondary pad-5x0 mar-unset">
@@ -2453,7 +2471,7 @@
                     </div>
                 </div>
                 <div class="text-secondary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
             </div>
 
@@ -2486,16 +2504,17 @@
         </div>
         <div class="flex-container border-primary-top mar-t-1r bg-img-primary">
             <h3 class="text-primary mar-unset pad-5 w-100">
-                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
+                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input
+                    type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
             </h3>
         </div>
 
 
 
 
-        <div class="flex-container">
+        <div class="flex-container bg-img-primary">
             <div class="bg-primary text-white pad-3x10 w-100 border-radius-15">
-                <h3 class="inline">SPIRITUAL NEEDS STATUS</h3>
+                <h3 class="inline">SPIRITUAL NEED STATUS</h3>
             </div>
             <div class="flex-grow">
                 <h3 class="text-primary pad-5x0 mar-unset">Goals/Outcomes:</h3>
@@ -2508,7 +2527,7 @@
                     </div>
                 </div>
                 <div class="text-secondary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
 
                 <h3 class="inline-block text-secondary pad-5x0 mar-unset">
@@ -2544,7 +2563,7 @@
                     </div>
                 </div>
                 <div class="text-secondary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
             </div>
             <div class="relative text-secondary flex-30 pad-t-10">
@@ -2562,11 +2581,12 @@
         </div>
         <div class="flex-container border-primary-top mar-t-1r bg-img-primary">
             <h3 class="text-primary mar-unset pad-5 w-100">
-                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
+                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input
+                    type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
             </h3>
         </div>
 
-        <div class="flex-container">
+        <div class="flex-container bg-img-primary">
             <div class="bg-primary text-white pad-3x10 w-100 border-radius-15">
                 <h3 class="inline">MEDICATIONS</h3>
             </div>
@@ -2668,7 +2688,7 @@
                 </div>
 
                 <div class="text-secondary pad-0x10">
-                    <input type="checkbox"> Other: <input  type="text" class="w-80" />
+                    <input type="checkbox"> Other: <input type="text" class="w-80" />
                 </div>
                 <h3 class="inline-block text-secondary pad-5x0 mar-unset">
                     High Tech/Special Procedures Interventions:
@@ -2690,7 +2710,9 @@
                         Administration of <input type="text" style="width: 60px;">(IV medication)
                     </div>
                     <div class="text-secondary pad-0x20">
-                        in <input type="text" style="width: 60px;"> (solution) to run at <input type="text" style="width: 60px;"> mL/hr via <input type="text" style="width: 60px;"> (<input type="checkbox">
+                        in <input type="text" style="width: 60px;"> (solution) to run at <input type="text"
+                            style="width: 60px;"> mL/hr via <input type="text" style="width: 60px;"> (<input
+                            type="checkbox">
                         Pump/<input type="checkbox"> Gravity )
                     </div>
                 </div>
@@ -2708,7 +2730,8 @@
                         Flush IV/PICC/Midline with 5-10mL of NS before and
                     </div>
                     <div class="text-secondary pad-0x20">
-                        after antibiotec infusion. Follow with 3-5mL Heparin <input type="text" style="width: 60px;"> units/mL flush
+                        after antibiotec infusion. Follow with 3-5mL Heparin <input type="text" style="width: 60px;">
+                        units/mL flush
                     </div>
                 </div>
 
@@ -2756,7 +2779,8 @@
                         <input type="checkbox"> <strong><em>Instruct:</em></strong>
                     </div>
                     <div class="inline-block">
-                        Flush <input type="text" style="width: 120px;"> catheter with <input type="text" style="width: 120px;">
+                        Flush <input type="text" style="width: 120px;"> catheter with <input type="text"
+                            style="width: 120px;">
                     </div>
                 </div>
 
@@ -2771,7 +2795,7 @@
                         <input type="checkbox"> <strong><em>Instruct:</em></strong>
                     </div>
                     <div class="inline-block">
-                        Change Huber needle q <input type="text" style="width: 80px;"/>
+                        Change Huber needle q <input type="text" style="width: 80px;" />
                     </div>
                     <div class="text-secondary pad-0x20">
                         technique
@@ -2789,7 +2813,8 @@
                         <input type="checkbox"> <strong><em>Instruct:</em></strong>
                     </div>
                     <div class="inline-block">
-                        Access port q <input type="text" style="width: 80px;"> and PRN flush with <input type="text" style="width: 80px;">
+                        Access port q <input type="text" style="width: 80px;"> and PRN flush with <input type="text"
+                            style="width: 80px;">
                     </div>
                 </div>
                 <div class="text-secondary pad-0x10">
@@ -2854,7 +2879,7 @@
                 </div>
 
                 <div class="text-secondary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
             </div>
             <div class="relative text-secondary flex-30 pad-t-10">
@@ -2896,11 +2921,12 @@
         </div>
         <div class="flex-container border-primary-top mar-t-1r bg-img-primary">
             <h3 class="text-primary mar-unset pad-5 w-100">
-                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
+                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input
+                    type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
             </h3>
         </div>
 
-        <div class="flex-container">
+        <div class="flex-container bg-img-primary">
             <div class="bg-primary text-white pad-3x10 w-100 border-radius-15">
                 <h3 class="inline">EQUIPMENT</h3>
             </div>
@@ -2911,7 +2937,7 @@
                     equipment set-up
                 </div>
                 <div class="text-secondary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
                 <h3 class="inline-block text-secondary pad-5x0 mar-unset">
                     Equipment Interventions:
@@ -2932,7 +2958,7 @@
                     </div>
                 </div>
                 <div class="text-secondary pad-0x10">
-                    <input type="checkbox"> Other: <input class="w-80" type="text">
+                    <input type="checkbox"> Other: <input class="w-80 other" type="text">
                 </div>
             </div>
             <div class="relative text-secondary flex-30 pad-t-10">
@@ -2947,13 +2973,14 @@
         </div>
         <div class="flex-container border-primary-top mar-t-1r bg-img-primary">
             <h3 class="text-primary mar-unset pad-5 w-100">
-                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
+                Date Initiated <input type="text" style="width: 35px;">/<input type="text" style="width: 35px;">/<input
+                    type="text" style="width: 35px;"> Name/Discipline <input type="text" style="width: 65%;">
             </h3>
         </div>
 
         <div class="other-container">
             <div class="other-left">
-                <div class="flex-container">
+                <div class="flex-container bg-img-primary">
                     <div class="bg-primary text-white pad-3x10 w-100 border-radius-15">
                         <h3 class="inline">OTHER</h3>
                     </div>
@@ -2986,12 +3013,14 @@
                 </div>
                 <div class="flex-container border-primary-top mar-t-1r bg-img-primary" style="width: 87%;">
                     <h3 class="text-primary mar-unset pad-5">
-                        Date Initiated <input type="text" style="width: 20px;">/<input type="text" style="width: 20px;">/<input type="text" style="width: 20px;"> Name/Discipline <input type="text" style="width: 120px;">
+                        Date Initiated <input type="text" style="width: 20px;">/<input type="text"
+                            style="width: 20px;">/<input type="text" style="width: 20px;"> Name/Discipline <input
+                            type="text" style="width: 120px;">
                     </h3>
                 </div>
                 <div class="flex-container border-primary-top bg-white mar-r-10">
                     <div class="text-primary mar-unset pad-5 w-100">
-                        Comments 
+                        Comments
                         <input type="text" class="w-80">
                     </div>
                 </div>
@@ -3007,7 +3036,7 @@
             </div>
 
             <div class="other-right">
-                <div class="flex-container pad-l-none">
+                <div class="flex-container pad-l-none bg-img-primary">
                     <div class="bg-primary text-white pad-3x10 w-100 border-radius-15">
                         <h3 class="inline">OTHER</h3>
                     </div>
@@ -3040,12 +3069,14 @@
                 </div>
                 <div class="flex-container border-primary-top mar-t-1r bg-img-primary pad-l-none" style="width: 90%;">
                     <h3 class="text-primary mar-unset pad-5">
-                        Date Initiated <input type="text" style="width: 20px;">/<input type="text" style="width: 20px;">/<input type="text" style="width: 20px;"> Name/Discipline <input type="text" style="width: 130px;">
+                        Date Initiated <input type="text" style="width: 20px;">/<input type="text"
+                            style="width: 20px;">/<input type="text" style="width: 20px;"> Name/Discipline <input
+                            type="text" style="width: 130px;">
                     </h3>
                 </div>
                 <div class="flex-container border-primary-top bg-white pad-l-none" style="width: 90%;">
                     <div class="text-primary mar-unset pad-5 w-100">
-                        Comments 
+                        Comments
                         <input type="text" class="w-80">
                     </div>
                 </div>
@@ -3072,30 +3103,43 @@
                 <h3 class="inline">ORDERS</h3>
             </div>
         </div>
-        <div class="flex-container pad-b-20">
+        <div class="flex-container pad-b-20 bg-img-primary">
             <div class="other-container-1">
-                <div class="flex-grow">
-                    <div><input type="checkbox"> SN visit frequency <input type="text" style="width: 35px;"> and <input type="text" style="width: 35px;"> PRN for changes in status when
-                        <input type="text" style="width: 35px;"> period of time</div>
-                    <div><input type="checkbox"> Aide visit frequency <input type="text" style="width: 35px;"> to assist w/ personal care/ADLs/fligh
-                        housekeeping as needed within <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" style="width: 35px;"> period of time
+                <div class="flex-grow bg-img-primary">
+                    <div><input type="checkbox"> SN visit frequency <input type="text" style="width: 35px;"> and <input
+                            type="text" style="width: 35px;"> PRN for changes in status when
+                        <input type="text" style="width: 35px;"> period of time
                     </div>
-                    <div class="inline-block"><input type="checkbox"> PT visit frequency <input type="text" style="width: 35px;"> within <input type="text" style="width: 35px;"> period of
+                    <div><input type="checkbox"> Aide visit frequency <input type="text" style="width: 35px;"> to assist
+                        w/ personal care/ADLs/fligh
+                        housekeeping as needed within <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"
+                            style="width: 35px;"> period of time
+                    </div>
+                    <div class="inline-block"><input type="checkbox"> PT visit frequency <input type="text"
+                            style="width: 35px;"> within <input type="text" style="width: 35px;"> period of
                         time</div>
                     <input type="checkbox"> PT to consult, evaluate and treat <br>
-                    <div class="inline-block"><input type="checkbox"> ST visit frequency <input type="text" style="width: 35px;"> within <input type="text" style="width: 35px;"> period of
+                    <div class="inline-block"><input type="checkbox"> ST visit frequency <input type="text"
+                            style="width: 35px;"> within <input type="text" style="width: 35px;"> period of
                         time</div> <input type="checkbox"> ST to consult, evaluate and treat <br>
-                    <div class="inline-block"><input type="checkbox"> OT visi frequency <input type="text" style="width: 35px;"> within <input type="text" style="width: 35px;"> period of
+                    <div class="inline-block"><input type="checkbox"> OT visi frequency <input type="text"
+                            style="width: 35px;"> within <input type="text" style="width: 35px;"> period of
                         time</div> <input type="checkbox"> OT to consult, evaluate and treat
 
                 </div>
                 <div class="flex-grow">
-                    <input type="checkbox"> SW to evaluate and assess for needs <input type="text" style="width: 35px;"> times per month
-                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and PRN for couseling within <input type="text" style="width: 35px;"> period of time
-                    <div><input type="checkbox"> Dietary couseling PRN within <input type="text" style="width: 35px;"> period of time</div>
-                    <div><input type="checkbox"> Volunteer for respite PRN within <input type="text" style="width: 35px;"> period of time</div>
-                    <div><input type="checkbox"> Spiritual Care Coordinator visit frequency <input type="text" style="width: 35px;"> and PRN
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for spiritual support within <input type="text" style="width: 35px;"> period of time
+                    <input type="checkbox"> SW to evaluate and assess for needs <input type="text" style="width: 35px;">
+                    times per month
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and PRN for couseling within <input type="text"
+                        style="width: 35px;"> period of time
+                    <div><input type="checkbox"> Dietary couseling PRN within <input type="text" style="width: 35px;">
+                        period of time</div>
+                    <div><input type="checkbox"> Volunteer for respite PRN within <input type="text"
+                            style="width: 35px;"> period of time</div>
+                    <div><input type="checkbox"> Spiritual Care Coordinator visit frequency <input type="text"
+                            style="width: 35px;"> and PRN
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for spiritual support within <input type="text"
+                            style="width: 35px;"> period of time
                     </div>
                 </div>
             </div>
@@ -3103,28 +3147,31 @@
                 <h3 class="text-primary mar-unset">The initial IDG Care Plnan was established with:</h3>
             </div>
 
-            <div class="other-container">
+            <div class="other-container bg-img-primary">
                 <div class="wa text-primary pad-5 br-none">
                     Attending Physician
                     <input type="text" class="borbot-none">
                 </div>
                 <div class="wa text-primary pad-5">Medical Director<input type="text" class="borbot-none"></div>
-                <div class="wa text-primary pad-5">RN Designated to Coordinate Care<input type="text" class="borbot-none"></div>
+                <div class="wa text-primary pad-5">RN Designated to Coordinate Care<input type="text"
+                        class="borbot-none"></div>
                 <div class="wa text-primary pad-5">Social Worker<input type="text" class="borbot-none"></div>
-                <div class="wa text-primary pad-5">Spiritual Care Coordinator<input type="text" class="borbot-none"></div>
+                <div class="wa text-primary pad-5">Spiritual Care Coordinator<input type="text" class="borbot-none">
+                </div>
                 <div class="wa text-primary pad-5">Other<input type="text" class="borbot-none"></div>
             </div>
-            <div class="other-container-3">
+            <div class="other-container-3 bg-img-primary">
                 <div class="wa text-primary pad-5">Signature<input type="text" class="borbot-none"></div>
                 <div class="wa text-primary pad-5">Discipline<input type="text" class="borbot-none"></div>
                 <div class="wa text-primary pad-5">Date<input type="text" class="borbot-none"></div>
-                <div class="wa wa1 text-primary pad-5" style="border-right: none;">Patient Name (First, MI, Last)<input type="text" class="borbot-none"></div>
+                <div class="wa wa1 text-primary pad-5" style="border-right: none;">Patient Name (First, MI, Last)<input
+                        type="text" class="borbot-none"></div>
                 <div class="wa text-primary pad-5" style="border-left: none;"></div>
                 <div class="wa text-primary pad-5">ID#<input type="text" class="borbot-none"></div>
             </div>
 
         </div>
-    </div> --}}
+    </div>
 </body>
 
 </html>

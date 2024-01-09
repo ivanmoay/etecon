@@ -51,6 +51,7 @@
                 <x-nav-item link='/my_profile' icon='table_view' navText='My Profile' />
                 <x-nav-item link='/my_forms/{{auth()->user()->id}}' icon='receipt_long' navText='My Forms' />
                 <x-nav-item link='/hospice_eligibility_requirements' icon='table_view' navText='Hospice Eligibility' />
+                <x-nav-item link='/learnings' icon='table_view' navText='Learnings' />
             @else
                 <x-nav-item link='#' icon='person' navText='Awaiting Activation' />
             @endif
@@ -59,6 +60,8 @@
                 <x-nav-item link='/companies' icon='person' navText='Companies' />
                 <x-nav-item link='/doctors' icon='person' navText='Doctors' />
                 <x-nav-item link='/diagnosis' icon='person' navText='Diagnosis' />
+                <x-nav-item link='/categories' icon='person' navText='Categories' />
+                <x-nav-item link='/courses' icon='person' navText='Courses' />
             @endif
             @if (auth()->user()->user_type == 3)
                 <x-nav-item link='/forms' icon='receipt_long' navText='Forms' />
@@ -82,12 +85,9 @@
             <div class="row align-items-center justify-content-lg-between">
                 <div class="col-lg-6 mb-lg-0 mb-4">
                 <div class="copyright text-center text-sm text-muted text-lg-start">
-                    © <script>
+                    {{-- © <script>
                     document.write(new Date().getFullYear())
-                    </script>
-                    {{-- ,
-                    by
-                    <a href="#" class="font-weight-bold" target="_blank">#</a> --}}
+                    </script> --}}
                 </div>
                 </div>
                 <div class="col-lg-6">

@@ -17,12 +17,18 @@ class UserFormController extends Controller
      */
     public function user_forms(User $user)
     {
-        $user_forms = UserForm::where('user_id', $user->id)->get();
+        $user_forms = UserForm::where('user_id', $user->id)
+                        ->join('forms', 'user_forms.form_id', '=', 'forms.id')
+                        ->orderBy('forms.category_id', 'DESC')
+                        ->orderBy('forms.form_name', 'ASC')
+                        ->get();
 
         $activeForms = DB::table('user_forms')->select('form_id')->where('user_id', $user->id);
  
         $forms = DB::table('forms')
                     ->whereNotIn('id', $activeForms)
+                    ->orderBy('category_id', 'DESC')
+                    ->orderBy('form_name', 'ASC')
                     ->get();         
 
         return view('user_forms.index', [
@@ -39,7 +45,11 @@ class UserFormController extends Controller
             abort(403, 'Unauthorized action.');
         }
 
-        $user_forms = UserForm::where('user_id', $user->id)->orderBy('form_id', 'asc')->get();
+        $user_forms = UserForm::where('user_id', $user->id)
+                        ->join('forms', 'user_forms.form_id', '=', 'forms.id')
+                        ->orderBy('forms.category_id', 'DESC')
+                        ->orderBy('forms.form_name', 'ASC')
+                        ->get();
 
         return view('my_forms.index', [
             'user_forms' => $user_forms

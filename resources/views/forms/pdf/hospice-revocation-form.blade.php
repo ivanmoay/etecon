@@ -226,7 +226,7 @@
                 @endif
             </div>
             <div class="heading" style="margin-left: auto">
-                <h1 class="heading">MEDIACARE HOSPICE BENEFIT REVOCATION</h1>
+                <h1 class="heading">MEDICARE HOSPICE BENEFIT REVOCATION</h1>
             </div>
         </div>
         

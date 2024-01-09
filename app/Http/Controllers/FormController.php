@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Form;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class FormController extends Controller
@@ -15,7 +16,7 @@ class FormController extends Controller
     public function index()
     {
         return view('forms.index', [
-            'forms' => Form::all()
+            'forms' => Form::orderBy('category_id', 'DESC')->orderBy('form_name', 'ASC')->get()
         ]);
     }
 
@@ -67,8 +68,11 @@ class FormController extends Controller
      */
     public function edit(Form $form)
     {
+        $categories = Category::all();
+
         return view('forms.edit', [
-            'form' => $form
+            'form' => $form,
+            'categories' => $categories
         ]);
     }
 
@@ -86,6 +90,7 @@ class FormController extends Controller
         ]);        
 
         $formFields['form_name'] = ucwords($formFields['form_name']);
+        $formFields['category_id'] = $request->category_id;
         $form->update($formFields);
 
         return redirect('/forms')->with('message', 'Form updated successfully!');
